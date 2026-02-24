@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "smtp": {
+    "host": "portal.indovisual.co.id",
+    "port": 587,
+    "secure": false,
+    "fromName": "FormFlow",
+    "password": "n@6XNCUg~Gh6uXuR",
+    "username": "admin@portal.indovisual.co.id",
+    "fromEmail": "admin@portal.indovisual.co.id"
+  },
+  "notes": "",
+  "createdAt": "2025-11-26T09:15:25.360Z",
+  "updatedAt": "2025-12-02T08:11:22.104Z"
+}

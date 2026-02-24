@@ -1,0 +1,56 @@
+[
+  {
+    "id": "001",
+    "name": "Admin",
+    "description": "Administrator with management privileges",
+    "permissions": [
+      "view_reports",
+      "approve_requests",
+      "manage_settings",
+      "access_admin_modules"
+    ]
+  },
+  {
+    "id": "002",
+    "name": "Warehouse",
+    "description": "Warehouse staff",
+    "permissions": [
+      "manage_inventory",
+      "view_warehouse_reports",
+      "access_warehouse_modules"
+    ]
+  },
+  {
+    "id": "003",
+    "name": "Marketing",
+    "description": "Marketing team member",
+    "permissions": [
+      "manage_campaigns",
+      "view_marketing_reports",
+      "access_marketing_modules"
+    ]
+  },
+  {
+    "id": "004",
+    "name": "Peminjam",
+    "description": "Standard user with basic access",
+    "permissions": [
+      "submit_requests",
+      "view_own_data",
+      "access_basic_modules"
+    ]
+  },
+  {
+    "id": "005",
+    "name": "Superadmin",
+    "description": "System Super Administrator with full access",
+    "permissions": [
+      "manage_users",
+      "manage_roles",
+      "view_all_reports",
+      "approve_requests",
+      "manage_settings",
+      "access_all_modules"
+    ]
+  }
+]

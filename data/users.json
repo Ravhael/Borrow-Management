@@ -1,0 +1,225 @@
+[
+  {
+    "id": "adm001",
+    "username": "admin",
+    "password": "$2b$12$HjrY4ZVGj8UqrTd/C./XC./MiRCMQoxZWrkwhPCz6mBt8hPlgMue6",
+    "name": "Heri",
+    "email": "admin@company.com",
+    "notification": null,
+    "phone": "+62 812 3456 7890",
+    "passwordResetToken": null,
+    "passwordResetExpiresAt": null,
+    "roleid": "001",
+    "directorateid": 4,
+    "entitasid": 20,
+    "isActive": true,
+    "IsLoggedIn": false,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-11-21T10:18:47.138Z",
+    "permissions": [
+      "read",
+      "write"
+    ]
+  },
+  {
+    "id": "mkt001",
+    "username": "richard",
+    "password": "$2b$12$ermBr7Huzzd.x5d4xLoS2.8RAqEEX3C7DvR837Kv6.6bopqCSP8MC",
+    "name": "Richard",
+    "email": "marketing.ivprichard@gmail.com",
+    "notification": null,
+    "phone": "+62 814 7890 1234",
+    "passwordResetToken": null,
+    "passwordResetExpiresAt": null,
+    "roleid": "003",
+    "directorateid": 4,
+    "entitasid": 25,
+    "isActive": true,
+    "IsLoggedIn": false,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-12-12T10:45:52.017Z",
+    "permissions": [
+      "read",
+      "write"
+    ]
+  },
+  {
+    "id": "mkt002",
+    "username": "gilang",
+    "password": "$2b$12$9KFmP/hODalYbBckortoG.HA8eBCo75GqMaE5cRN8uqUS.rO/GWAq",
+    "name": "Gilang",
+    "email": "gilangivp@company.com",
+    "notification": null,
+    "phone": "081356241562",
+    "passwordResetToken": null,
+    "passwordResetExpiresAt": null,
+    "roleid": "003",
+    "directorateid": 4,
+    "entitasid": 25,
+    "isActive": true,
+    "IsLoggedIn": false,
+    "createdAt": "2025-11-28T08:00:09.230Z",
+    "updatedAt": "2025-12-03T04:33:20.711Z",
+    "permissions": []
+  },
+  {
+    "id": "mkt003",
+    "username": "hosi",
+    "password": "$2b$12$p6RGB1CAfBbQJZ2r0YHX4Oeu5UX4pMDEcH/Z7zEPDmufiAoOVMQie",
+    "name": "Hosi",
+    "email": "hosiivp@company.com",
+    "notification": null,
+    "phone": "081315642654",
+    "passwordResetToken": null,
+    "passwordResetExpiresAt": null,
+    "roleid": "003",
+    "directorateid": 4,
+    "entitasid": 25,
+    "isActive": true,
+    "IsLoggedIn": false,
+    "createdAt": "2025-11-28T08:04:56.926Z",
+    "updatedAt": "2025-11-28T08:05:28.429Z",
+    "permissions": []
+  },
+  {
+    "id": "pjm002",
+    "username": "556509",
+    "password": "$2b$12$ytSGfyacJRCzDchtyp/zG.03FCIEQI5fKG6if./kI61d434sksA6a",
+    "name": "Roy",
+    "email": "roy@company.com",
+    "notification": null,
+    "phone": "081315264598",
+    "passwordResetToken": null,
+    "passwordResetExpiresAt": null,
+    "roleid": "004",
+    "directorateid": 1,
+    "entitasid": 2,
+    "isActive": true,
+    "IsLoggedIn": false,
+    "createdAt": "2025-11-29T06:13:39.924Z",
+    "updatedAt": "2025-11-29T06:28:32.746Z",
+    "permissions": []
+  },
+  {
+    "id": "pjm003",
+    "username": "0123456",
+    "password": "$2b$12$Jx7.S.YtpCIa20NZRpRdnuGnyI5QwkNqMfkItNCUG9EhGTJ/4m/Py",
+    "name": "Ravhael",
+    "email": "zoentak.raphael@gmail.com",
+    "notification": {
+      "history": [
+        {
+          "to": "zoentak.raphael@gmail.com",
+          "type": "account_creation",
+          "error": null,
+          "sentAt": "2025-12-12T07:23:43.168Z",
+          "actorId": null,
+          "success": true,
+          "actorName": null
+        },
+        {
+          "to": "zoentak.raphael@gmail.com",
+          "type": "account_approval",
+          "error": null,
+          "sentAt": "2025-12-12T07:24:41.407Z",
+          "actorId": null,
+          "success": true,
+          "actorName": null
+        },
+        {
+          "to": "zoentak.raphael@gmail.com",
+          "type": "password_reset_request",
+          "error": null,
+          "sentAt": "2025-12-12T07:26:05.504Z",
+          "success": true
+        },
+        {
+          "to": "zoentak.raphael@gmail.com",
+          "type": "password_reset_request",
+          "error": null,
+          "sentAt": "2025-12-12T07:49:03.872Z",
+          "success": true
+        },
+        {
+          "to": "zoentak.raphael@gmail.com",
+          "type": "password_reset_request",
+          "error": null,
+          "sentAt": "2025-12-12T08:01:50.864Z",
+          "success": true
+        },
+        {
+          "to": "zoentak.raphael@gmail.com",
+          "type": "password_reset",
+          "sentAt": "2025-12-12T08:21:33.722Z",
+          "success": true
+        }
+      ],
+      "lastNotification": {
+        "to": "zoentak.raphael@gmail.com",
+        "type": "password_reset",
+        "sentAt": "2025-12-12T08:21:33.722Z",
+        "success": true
+      }
+    },
+    "phone": "081314566100",
+    "passwordResetToken": null,
+    "passwordResetExpiresAt": null,
+    "roleid": "004",
+    "directorateid": 4,
+    "entitasid": 24,
+    "isActive": true,
+    "IsLoggedIn": true,
+    "createdAt": "2025-12-12T07:23:36.900Z",
+    "updatedAt": "2025-12-12T10:45:59.622Z",
+    "permissions": []
+  },
+  {
+    "id": "sp001",
+    "username": "superadmin",
+    "password": "$2b$12$e4IQdO4yhCp1wTikc8jxFOclVynHDpybgxUrpSAwAAxOCzl33DU7C",
+    "name": "System Administrator",
+    "email": "superadmin@company.com",
+    "notification": null,
+    "phone": "+62 811 1234 5678",
+    "passwordResetToken": null,
+    "passwordResetExpiresAt": null,
+    "roleid": "005",
+    "directorateid": 4,
+    "entitasid": 24,
+    "isActive": true,
+    "IsLoggedIn": true,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-12-16T07:39:41.669Z",
+    "permissions": [
+      "read",
+      "write",
+      "approve",
+      "delete",
+      "manage_users",
+      "system_config"
+    ]
+  },
+  {
+    "id": "wh001",
+    "username": "gudang",
+    "password": "$2b$12$1QeFIztENnfESvecksYn1.mRChm2XdVPJ5VptjjyLi9ImaWvixJ0i",
+    "name": "Susan",
+    "email": "warehouse@company.com",
+    "notification": null,
+    "phone": "+62 815 9012 3456",
+    "passwordResetToken": null,
+    "passwordResetExpiresAt": null,
+    "roleid": "002",
+    "directorateid": 6,
+    "entitasid": 32,
+    "isActive": true,
+    "IsLoggedIn": true,
+    "createdAt": "2025-01-01T00:00:00.000Z",
+    "updatedAt": "2025-12-12T09:42:48.414Z",
+    "permissions": [
+      "read",
+      "write",
+      "manage_inventory"
+    ]
+  }
+]

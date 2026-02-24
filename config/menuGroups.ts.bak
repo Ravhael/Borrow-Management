@@ -1,0 +1,80 @@
+import React from 'react'
+import {
+  Dashboard as DashboardIcon,
+  Person as PersonIcon,
+  Assignment as AssignmentIcon,
+  CheckCircle as CheckCircleIcon,
+  People as PeopleIcon,
+  Business as BusinessIcon,
+  Factory as FactoryIcon,
+  Notifications as NotificationsIcon,
+  Email as EmailIcon,
+  Schedule as ScheduleIcon,
+  Warehouse as WarehouseIcon,
+  Settings as SettingsIcon,
+} from '@mui/icons-material'
+import { MenuGroup } from '../types/sidebar'
+
+const createAdminItems = () => ([
+  { href: '/admin/dashboard', label: 'Dashboard', icon: React.createElement(DashboardIcon), color: '#1565c0' },
+  { href: '/form', label: 'Request Form', icon: React.createElement(AssignmentIcon), color: '#42a5f5' },
+  { href: '/peminjaman', label: 'Form Data', icon: React.createElement(AssignmentIcon), color: '#2196f3' },
+  { href: '/entitas', label: 'Entity Data', icon: React.createElement(BusinessIcon), color: '#9c27b0' },
+  { href: '/company', label: 'Company Data', icon: React.createElement(FactoryIcon), color: '#607d8b' },
+  { href: '/admin/profile', label: 'Profile', icon: React.createElement(PersonIcon), color: '#1976d2' },
+])
+
+const createSuperadminItems = () => ([
+  { href: '/superadmin/dashboard', label: 'Dashboard', icon: React.createElement(DashboardIcon), color: '#1565c0' },
+  { href: '/form', label: 'Request Form', icon: React.createElement(AssignmentIcon), color: '#42a5f5' },
+  { href: '/peminjaman', label: 'Form Data', icon: React.createElement(AssignmentIcon), color: '#2196f3' },
+  { href: '/approvals', label: 'Approvals', icon: React.createElement(CheckCircleIcon), color: '#4caf50' },
+  { href: '/admin/users', label: 'User Management', icon: React.createElement(PeopleIcon), color: '#ff9800' },
+  { href: '/gudang', label: 'Warehouse Data', icon: React.createElement(WarehouseIcon), color: '#ed6c02' },
+  { href: '/entitas', label: 'Entity Data', icon: React.createElement(BusinessIcon), color: '#9c27b0' },
+  { href: '/company', label: 'Company Data', icon: React.createElement(FactoryIcon), color: '#607d8b' },
+  { href: '/admin/reminders', label: 'Reminders', icon: React.createElement(ScheduleIcon), color: '#f44336' },
+  { href: '/admin/mailsettings', label: 'Mail Settings', icon: React.createElement(EmailIcon), color: '#e91e63' },
+  { href: '/notifications', label: 'Notification Rules', icon: React.createElement(NotificationsIcon), color: '#ff5722' },
+  { href: '/admin/google-settings', label: 'Google Settings', icon: React.createElement(SettingsIcon), color: '#0f9d58' },
+  { href: '/superadmin/profile', label: 'Profile', icon: React.createElement(PersonIcon), color: '#1976d2' },
+])
+
+export const menuGroups: MenuGroup[] = [
+  {
+    title: 'Superadmin',
+    items: createSuperadminItems()
+  },
+  {
+    title: 'Admin',
+    items: createAdminItems()
+  },
+  {
+    title: 'Regular User',
+    items: [
+      { href: '/user/dashboard', label: 'Dashboard', icon: React.createElement(DashboardIcon), color: '#1565c0' },
+      { href: '/form', label: 'Request Form', icon: React.createElement(AssignmentIcon), color: '#42a5f5' },
+      { href: '/peminjaman', label: 'Form Data', icon: React.createElement(AssignmentIcon), color: '#2196f3' },
+      { href: '/user/profile', label: 'Profile', icon: React.createElement(PersonIcon), color: '#1976d2' },
+    ]
+  },
+  {
+    title: 'Marketing',
+    items: [
+      { href: '/marketing/dashboard', label: 'Dashboard', icon: React.createElement(DashboardIcon), color: '#1565c0' },
+      { href: '/form', label: 'Request Form', icon: React.createElement(AssignmentIcon), color: '#42a5f5' },
+      { href: '/approvals', label: 'Approvals', icon: React.createElement(CheckCircleIcon), color: '#4caf50' },
+      { href: '/peminjaman', label: 'Form Data', icon: React.createElement(AssignmentIcon), color: '#2196f3' },
+      { href: '/marketing/profile', label: 'Profile', icon: React.createElement(PersonIcon), color: '#1976d2' },
+    ]
+  },
+  {
+    title: 'Warehouse',
+    items: [
+      { href: '/gudang/dashboard', label: 'Dashboard', icon: React.createElement(DashboardIcon), color: '#1565c0' },
+      { href: '/form', label: 'Request Form', icon: React.createElement(AssignmentIcon), color: '#42a5f5' },
+      { href: '/gudang', label: 'Warehouse Data', icon: React.createElement(WarehouseIcon), color: '#ed6c02' },
+      { href: '/gudang/profile', label: 'Profile', icon: React.createElement(PersonIcon), color: '#1976d2' },
+    ]
+  },
+]

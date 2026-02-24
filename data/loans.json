@@ -1,0 +1,459 @@
+[
+  {
+    "id": "",
+    "submittedAt": "",
+    "isDraft": false,
+    "entitasId": "",
+    "borrowerPhone": "",
+    "borrowerEmail": "",
+    "borrowerName": "",
+    "needType": "",
+    "needDetails": {},
+    "company": [
+      "Marketing - PT Contoh"
+    ],
+    "outDate": "",
+    "useDate": "",
+    "returnDate": "",
+    "productDetailsText": "",
+    "pickupMethod": "",
+    "note": "",
+    "approvalAgreementFlag": false,
+    "loanStatus": "PENDING",
+    "submitNotifications": {
+      "companies": {
+        "": {
+          "Marketing": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          },
+          "Admin": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          }
+        }
+      }
+    },
+    "approvalNotifications": {
+      "entitas": {
+        "": {
+          "Head": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          },
+          "Admin": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          },
+          "Others": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          },
+          "Finance": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          }
+        }
+      },
+      "companies": {
+        "": {
+          "Head": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          },
+          "Admin": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          },
+          "Others": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          },
+          "Finance": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          },
+          "Marketing": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          },
+          "Warehouse": {
+            "sent": false,
+            "email": "",
+            "sentAt": ""
+          }
+        }
+      }
+    },
+    "approvals": {
+      "companies": {
+        "Marketing - PT Contoh": {
+          "approved": true,
+          "approvedBy": "Entitas Approver",
+          "approvedAt": "2025-11-12T16:10:59.000Z",
+          "note": "Perhatikan ukuran dan packing."
+        }
+      }
+    },
+    "reminderStatus": {
+      "1764125862262_reminder_7_days": {
+        "sent": false,
+        "sentAt": "",
+        "type": "reminder_7_days",
+        "notifications": {
+          "borrower": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "entitas": {
+            "": {
+              "Head": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Admin": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Others": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Finance": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              }
+            }
+          },
+          "companies": {
+            "": {
+              "Head": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Admin": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Others": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Finance": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Marketing": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Warehouse": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              }
+            }
+          }
+        }
+      },
+      "1764125862262_reminder_3_days": {
+        "sent": false,
+        "sentAt": "",
+        "type": "reminder_3_days",
+        "notifications": {
+          "borrower": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "entitas": {
+            "": {
+              "Head": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Admin": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Others": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Finance": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              }
+            }
+          },
+          "companies": {
+            "": {
+              "Head": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Admin": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Others": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Finance": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Marketing": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Warehouse": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              }
+            }
+          }
+        }
+      },
+      "1764125862262_reminder_1_days": {
+        "sent": false,
+        "sentAt": "",
+        "type": "reminder_1_days",
+        "notifications": {
+          "borrower": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "entitas": {
+            "": {
+              "Head": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Admin": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Others": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Finance": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              }
+            }
+          },
+          "companies": {
+            "": {
+              "Head": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Admin": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Others": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Finance": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Marketing": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Warehouse": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              }
+            }
+          }
+        }
+      },
+      "1764125862262_reminder_0_days": {
+        "sent": false,
+        "sentAt": "",
+        "type": "reminder_0_days",
+        "notifications": {
+          "borrower": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "entitas": {
+            "": {
+              "Head": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Admin": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Others": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Finance": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              }
+            }
+          },
+          "companies": {
+            "": {
+              "Head": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Admin": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Others": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Finance": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Marketing": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              },
+              "Warehouse": {
+                "sent": false,
+                "sentAt": "",
+                "email": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "warehouseStatus": {
+      "status": "",
+      "processedAt": "",
+      "processedBy": "",
+      "returnedAt": "",
+      "returnedBy": ""
+    },
+    "returnNotifications": {
+      "entitas": {
+        "": {
+          "Head": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "Admin": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "Others": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "Finance": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          }
+        }
+      },
+      "companies": {
+        "": {
+          "Head": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "Admin": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "Others": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "Finance": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "Marketing": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          },
+          "Warehouse": {
+            "sent": false,
+            "sentAt": "",
+            "email": ""
+          }
+        }
+      }
+    }
+  }
+]

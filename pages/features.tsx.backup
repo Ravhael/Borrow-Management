@@ -1,0 +1,778 @@
+import React from 'react'
+import Head from 'next/head'
+import { ThemeProvider, useTheme, useMediaQuery } from '@mui/material/styles'
+import Footer from '../components/Footer'
+import { NavigationHeader, HeroSection, CoreFeaturesSection, AdditionalFeaturesSection, CTASection } from '../components/features'
+import { featuresTheme } from '../themes/featuresTheme'
+
+export default function Features() {
+  const muiTheme = useTheme()
+  const isMobile = useMediaQuery(muiTheme.breakpoints.down('md'))
+  const isSmallScreen = useMediaQuery(muiTheme.breakpoints.down('sm'))
+
+  return (
+    <ThemeProvider theme={featuresTheme}>
+      <div style={{ minHeight: '100vh', backgroundColor: featuresTheme.palette.background.default }}>
+        <Head>
+          <title>Features - FormFlow Corporate Loan Management</title>
+          <meta name="description" content="Explore comprehensive features of FormFlow - enterprise-grade loan management system with advanced analytics, real-time processing, and seamless integration" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        </Head>
+
+        <NavigationHeader isMobile={isMobile} isSmallScreen={isSmallScreen} />
+        <HeroSection />
+        <CoreFeaturesSection />
+        <AdditionalFeaturesSection />
+        <CTASection />
+
+        <Footer />
+      </div>
+    </ThemeProvider>
+  )
+}
+
+        {/* Navigation Header */}
+        <AppBar
+          position="fixed"
+          elevation={0}
+          sx={{
+            background: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(20px)',
+            borderBottom: '1px solid rgba(0, 0, 0, 0.08)',
+            zIndex: 1100,
+          }}
+        >
+          <Container maxWidth="lg">
+            <Toolbar sx={{ py: 1 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flex: 1 }}>
+                <Link href="/" passHref>
+                  <Button
+                    sx={{
+                      p: 0,
+                      minWidth: 'auto',
+                      '&:hover': { backgroundColor: 'transparent' }
+                    }}
+                  >
+                    <Avatar sx={{ bgcolor: theme.palette.primary.main, width: 40, height: 40 }}>
+                      <Typography variant="h6" sx={{ color: 'white', fontWeight: 800 }}>
+                        FF
+                      </Typography>
+                    </Avatar>
+                  </Button>
+                </Link>
+                <Link href="/" passHref>
+                  <Button
+                    sx={{
+                      p: 0,
+                      minWidth: 'auto',
+                      '&:hover': { backgroundColor: 'transparent' }
+                    }}
+                  >
+                    <Typography variant="h6" sx={{ fontWeight: 700, color: theme.palette.primary.main }}>
+                      FormFlow
+                    </Typography>
+                  </Button>
+                </Link>
+              </Box>
+
+              {!isMobile && (
+                <Stack direction="row" spacing={3} sx={{ mr: 3 }}>
+                  <Link href="/features" passHref>
+                    <Button color="inherit" sx={{ color: theme.palette.primary.main, fontWeight: 600 }}>
+                      Features
+                    </Button>
+                  </Link>
+                  <Button color="inherit" sx={{ color: theme.palette.text.primary, fontWeight: 500 }}>
+                    Solutions
+                  </Button>
+                  <Button color="inherit" sx={{ color: theme.palette.text.primary, fontWeight: 500 }}>
+                    About
+                  </Button>
+                  <Button color="inherit" sx={{ color: theme.palette.text.primary, fontWeight: 500 }}>
+                    Contact
+                  </Button>
+                </Stack>
+              )}
+
+              <Stack direction="row" spacing={2}>
+                <Link href="/login" passHref>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      borderColor: theme.palette.primary.main,
+                      color: theme.palette.primary.main,
+                      '&:hover': {
+                        borderColor: theme.palette.primary.dark,
+                        backgroundColor: 'rgba(26, 54, 93, 0.04)',
+                      }
+                    }}
+                  >
+                    Sign In
+                  </Button>
+                </Link>
+                <Button
+                  variant="contained"
+                  sx={{
+                    background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
+                    boxShadow: '0 4px 14px rgba(26, 54, 93, 0.25)',
+                  }}
+                >
+                  Get Started
+                </Button>
+                {isMobile && (
+                  <IconButton color="inherit">
+                    <MenuIcon />
+                  </IconButton>
+                )}
+              </Stack>
+            </Toolbar>
+          </Container>
+        </AppBar>
+
+        {/* Hero Section */}
+        <Box
+          sx={{
+            pt: { xs: 12, md: 16 },
+            pb: { xs: 8, md: 12 },
+            background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 50%, ${theme.palette.secondary.main} 100%)`,
+            position: 'relative',
+            overflow: 'hidden',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+            }
+          }}
+        >
+          <Container maxWidth="lg">
+            <Box sx={{ textAlign: 'center', color: 'white' }}>
+              <Breadcrumbs
+                sx={{
+                  mb: 3,
+                  justifyContent: 'center',
+                  '& .MuiBreadcrumbs-li': { color: 'rgba(255, 255, 255, 0.7)' },
+                  '& .MuiBreadcrumbs-li .MuiTypography-root': { color: 'rgba(255, 255, 255, 0.7)' },
+                  '& .MuiBreadcrumbs-separator': { color: 'rgba(255, 255, 255, 0.5)' }
+                }}
+                aria-label="breadcrumb"
+              >
+                <Link href="/" passHref>
+                  <Button
+                    sx={{
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      textTransform: 'none',
+                      p: 0,
+                      minWidth: 'auto',
+                      '&:hover': { color: 'white', backgroundColor: 'transparent' }
+                    }}
+                  >
+                    Home
+                  </Button>
+                </Link>
+                <Typography color="white">Features</Typography>
+              </Breadcrumbs>
+
+              <Typography
+                variant="h1"
+                sx={{
+                  fontSize: { xs: '2.5rem', md: '3.5rem', lg: '4rem' },
+                  mb: 3,
+                  lineHeight: 1.1,
+                }}
+              >
+                Powerful Features for
+                <Box component="span" sx={{ color: theme.palette.secondary.light }}>
+                  {' '}Modern Enterprises
+                </Box>
+              </Typography>
+              <Typography
+                variant="h5"
+                sx={{
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  mb: 6,
+                  fontWeight: 400,
+                  lineHeight: 1.6,
+                  fontSize: { xs: '1.125rem', md: '1.25rem' },
+                  maxWidth: 800,
+                  mx: 'auto'
+                }}
+              >
+                Discover how FormFlow's comprehensive suite of features transforms
+                your corporate loan management process with cutting-edge technology
+                and intelligent automation.
+              </Typography>
+            </Box>
+          </Container>
+        </Box>
+
+        {/* Core Features Section */}
+        <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: 'white' }}>
+          <Container maxWidth="lg">
+            <Box sx={{ textAlign: 'center', mb: 8 }}>
+              <Chip
+                label="Core Capabilities"
+                sx={{
+                  mb: 3,
+                  backgroundColor: theme.palette.primary.main,
+                  color: 'white',
+                  fontWeight: 600,
+                  fontSize: '0.875rem',
+                  px: 2,
+                  py: 1,
+                }}
+              />
+              <Typography
+                variant="h2"
+                sx={{
+                  mb: 3,
+                  fontWeight: 700,
+                  color: theme.palette.primary.main
+                }}
+              >
+                Everything You Need for Enterprise Loan Management
+              </Typography>
+              <Typography
+                variant="h6"
+                color="text.secondary"
+                sx={{ maxWidth: 700, mx: 'auto' }}
+              >
+                Comprehensive tools designed to streamline every aspect of your loan management workflow
+              </Typography>
+            </Box>
+
+            <Grid container spacing={4}>
+              {/* Smart Loan Requests */}
+              <Grid size={{ xs: 12, lg: 6 }}>
+                <Zoom in={true} timeout={800}>
+                  <Card
+                    elevation={4}
+                    sx={{
+                      height: '100%',
+                      borderRadius: 4,
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-8px)',
+                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+                      }
+                    }}
+                  >
+                    <CardContent sx={{ p: 6 }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+                        <Box
+                          sx={{
+                            width: 80,
+                            height: 80,
+                            borderRadius: 3,
+                            background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.light} 100%)`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 3,
+                          }}
+                        >
+                          <AssignmentIcon sx={{ fontSize: 40, color: 'white' }} />
+                        </Box>
+                        <Box>
+                          <Typography variant="h4" sx={{ mb: 1, fontWeight: 600 }}>
+                            Smart Loan Requests
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Intelligent form processing with auto-validation
+                          </Typography>
+                        </Box>
+                      </Box>
+                      <Typography variant="body1" color="text.secondary" sx={{ mb: 4, lineHeight: 1.7 }}>
+                        Experience the future of loan request submissions with our intelligent forms that feature
+                        real-time validation, auto-save functionality, and guided workflows. Our smart system
+                        prevents errors, suggests optimal loan amounts, and ensures all required documentation
+                        is properly attached before submission.
+                      </Typography>
+                      <Stack direction="row" spacing={2} flexWrap="wrap">
+                        <Chip label="Auto-Validation" size="small" color="primary" variant="outlined" />
+                        <Chip label="Auto-Save" size="small" color="primary" variant="outlined" />
+                        <Chip label="Guided Workflow" size="small" color="primary" variant="outlined" />
+                        <Chip label="Document Upload" size="small" color="primary" variant="outlined" />
+                      </Stack>
+                    </CardContent>
+                  </Card>
+                </Zoom>
+              </Grid>
+
+              {/* Real-Time Processing */}
+              <Grid size={{ xs: 12, lg: 6 }}>
+                <Zoom in={true} timeout={1000}>
+                  <Card
+                    elevation={4}
+                    sx={{
+                      height: '100%',
+                      borderRadius: 4,
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-8px)',
+                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+                      }
+                    }}
+                  >
+                    <CardContent sx={{ p: 6 }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+                        <Box
+                          sx={{
+                            width: 80,
+                            height: 80,
+                            borderRadius: 3,
+                            background: `linear-gradient(135deg, ${theme.palette.secondary.main} 0%, ${theme.palette.secondary.light} 100%)`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 3,
+                          }}
+                        >
+                          <SpeedIcon sx={{ fontSize: 40, color: 'white' }} />
+                        </Box>
+                        <Box>
+                          <Typography variant="h4" sx={{ mb: 1, fontWeight: 600 }}>
+                            Real-Time Processing
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Instant notifications and live status updates
+                          </Typography>
+                        </Box>
+                      </Box>
+                      <Typography variant="body1" color="text.secondary" sx={{ mb: 4, lineHeight: 1.7 }}>
+                        Stay informed with our real-time processing engine that provides instant notifications,
+                        automated approval workflows, and live status updates. Never miss a deadline or approval
+                        with our intelligent notification system that adapts to your communication preferences.
+                      </Typography>
+                      <Stack direction="row" spacing={2} flexWrap="wrap">
+                        <Chip label="Instant Notifications" size="small" color="secondary" variant="outlined" />
+                        <Chip label="Live Updates" size="small" color="secondary" variant="outlined" />
+                        <Chip label="Auto-Workflows" size="small" color="secondary" variant="outlined" />
+                        <Chip label="Multi-Channel" size="small" color="secondary" variant="outlined" />
+                      </Stack>
+                    </CardContent>
+                  </Card>
+                </Zoom>
+              </Grid>
+
+              {/* Inventory Integration */}
+              <Grid size={{ xs: 12, lg: 6 }}>
+                <Zoom in={true} timeout={1200}>
+                  <Card
+                    elevation={4}
+                    sx={{
+                      height: '100%',
+                      borderRadius: 4,
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-8px)',
+                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+                      }
+                    }}
+                  >
+                    <CardContent sx={{ p: 6 }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+                        <Box
+                          sx={{
+                            width: 80,
+                            height: 80,
+                            borderRadius: 3,
+                            background: 'linear-gradient(135deg, #10b981 0%, #34d399 100%)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 3,
+                          }}
+                        >
+                          <InventoryIcon sx={{ fontSize: 40, color: 'white' }} />
+                        </Box>
+                        <Box>
+                          <Typography variant="h4" sx={{ mb: 1, fontWeight: 600 }}>
+                            Inventory Integration
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Seamless warehouse system connectivity
+                          </Typography>
+                        </Box>
+                      </Box>
+                      <Typography variant="body1" color="text.secondary" sx={{ mb: 4, lineHeight: 1.7 }}>
+                        Connect seamlessly with your existing warehouse management systems. Our intelligent
+                        integration automatically checks inventory availability, updates stock levels in real-time,
+                        and prevents over-loaning of scarce resources. Full API support for custom integrations.
+                      </Typography>
+                      <Stack direction="row" spacing={2} flexWrap="wrap">
+                        <Chip label="Real-Time Sync" size="small" sx={{ bgcolor: '#10b981', color: 'white' }} />
+                        <Chip label="Auto-Updates" size="small" sx={{ bgcolor: '#10b981', color: 'white' }} />
+                        <Chip label="API Integration" size="small" sx={{ bgcolor: '#10b981', color: 'white' }} />
+                        <Chip label="Availability Check" size="small" sx={{ bgcolor: '#10b981', color: 'white' }} />
+                      </Stack>
+                    </CardContent>
+                  </Card>
+                </Zoom>
+              </Grid>
+
+              {/* Advanced Analytics */}
+              <Grid size={{ xs: 12, lg: 6 }}>
+                <Zoom in={true} timeout={1400}>
+                  <Card
+                    elevation={4}
+                    sx={{
+                      height: '100%',
+                      borderRadius: 4,
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-8px)',
+                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+                      }
+                    }}
+                  >
+                    <CardContent sx={{ p: 6 }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+                        <Box
+                          sx={{
+                            width: 80,
+                            height: 80,
+                            borderRadius: 3,
+                            background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.light} 100%)`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 3,
+                          }}
+                        >
+                          <AnalyticsIcon sx={{ fontSize: 40, color: 'white' }} />
+                        </Box>
+                        <Box>
+                          <Typography variant="h4" sx={{ mb: 1, fontWeight: 600 }}>
+                            Advanced Analytics
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Comprehensive reporting and performance insights
+                          </Typography>
+                        </Box>
+                      </Box>
+                      <Typography variant="body1" color="text.secondary" sx={{ mb: 4, lineHeight: 1.7 }}>
+                        Gain deep insights into your loan management performance with comprehensive analytics,
+                        custom reports, and predictive analytics. Track approval times, identify bottlenecks,
+                        and optimize resource allocation with data-driven decision making.
+                      </Typography>
+                      <Stack direction="row" spacing={2} flexWrap="wrap">
+                        <Chip label="Custom Reports" size="small" color="primary" variant="outlined" />
+                        <Chip label="Performance Metrics" size="small" color="primary" variant="outlined" />
+                        <Chip label="Predictive Analytics" size="small" color="primary" variant="outlined" />
+                        <Chip label="Data Export" size="small" color="primary" variant="outlined" />
+                      </Stack>
+                    </CardContent>
+                  </Card>
+                </Zoom>
+              </Grid>
+
+              {/* Enterprise Security */}
+              <Grid size={{ xs: 12, lg: 6 }}>
+                <Zoom in={true} timeout={1600}>
+                  <Card
+                    elevation={4}
+                    sx={{
+                      height: '100%',
+                      borderRadius: 4,
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-8px)',
+                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+                      }
+                    }}
+                  >
+                    <CardContent sx={{ p: 6 }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+                        <Box
+                          sx={{
+                            width: 80,
+                            height: 80,
+                            borderRadius: 3,
+                            background: `linear-gradient(135deg, ${theme.palette.secondary.main} 0%, ${theme.palette.secondary.light} 100%)`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 3,
+                          }}
+                        >
+                          <SecurityIcon sx={{ fontSize: 40, color: 'white' }} />
+                        </Box>
+                        <Box>
+                          <Typography variant="h4" sx={{ mb: 1, fontWeight: 600 }}>
+                            Enterprise Security
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Bank-level security and compliance features
+                          </Typography>
+                        </Box>
+                      </Box>
+                      <Typography variant="body1" color="text.secondary" sx={{ mb: 4, lineHeight: 1.7 }}>
+                        Protect your sensitive business data with bank-level security features including
+                        end-to-end encryption, role-based access control, comprehensive audit trails,
+                        and full compliance with industry standards like GDPR and SOC 2.
+                      </Typography>
+                      <Stack direction="row" spacing={2} flexWrap="wrap">
+                        <Chip label="End-to-End Encryption" size="small" color="secondary" variant="outlined" />
+                        <Chip label="Role-Based Access" size="small" color="secondary" variant="outlined" />
+                        <Chip label="Audit Trails" size="small" color="secondary" variant="outlined" />
+                        <Chip label="GDPR Compliant" size="small" color="secondary" variant="outlined" />
+                      </Stack>
+                    </CardContent>
+                  </Card>
+                </Zoom>
+              </Grid>
+
+              {/* Performance Insights */}
+              <Grid size={{ xs: 12, lg: 6 }}>
+                <Zoom in={true} timeout={1800}>
+                  <Card
+                    elevation={4}
+                    sx={{
+                      height: '100%',
+                      borderRadius: 4,
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-8px)',
+                        boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
+                      }
+                    }}
+                  >
+                    <CardContent sx={{ p: 6 }}>
+                      <Box sx={{ display: 'flex', alignItems: 'center', mb: 4 }}>
+                        <Box
+                          sx={{
+                            width: 80,
+                            height: 80,
+                            borderRadius: 3,
+                            background: 'linear-gradient(135deg, #10b981 0%, #34d399 100%)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            mr: 3,
+                          }}
+                        >
+                          <TrendingUpIcon sx={{ fontSize: 40, color: 'white' }} />
+                        </Box>
+                        <Box>
+                          <Typography variant="h4" sx={{ mb: 1, fontWeight: 600 }}>
+                            Performance Insights
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            AI-powered optimization and recommendations
+                          </Typography>
+                        </Box>
+                      </Box>
+                      <Typography variant="body1" color="text.secondary" sx={{ mb: 4, lineHeight: 1.7 }}>
+                        Leverage AI-powered insights to optimize your loan management processes. Our intelligent
+                        system analyzes patterns, predicts bottlenecks, and provides actionable recommendations
+                        to improve approval times, reduce costs, and enhance overall operational efficiency.
+                      </Typography>
+                      <Stack direction="row" spacing={2} flexWrap="wrap">
+                        <Chip label="AI-Powered" size="small" sx={{ bgcolor: '#10b981', color: 'white' }} />
+                        <Chip label="Predictive Analytics" size="small" sx={{ bgcolor: '#10b981', color: 'white' }} />
+                        <Chip label="Process Optimization" size="small" sx={{ bgcolor: '#10b981', color: 'white' }} />
+                        <Chip label="Smart Recommendations" size="small" sx={{ bgcolor: '#10b981', color: 'white' }} />
+                      </Stack>
+                    </CardContent>
+                  </Card>
+                </Zoom>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+
+        {/* Additional Features Section */}
+        <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: theme.palette.background.default }}>
+          <Container maxWidth="lg">
+            <Box sx={{ textAlign: 'center', mb: 8 }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  mb: 3,
+                  fontWeight: 700,
+                  color: theme.palette.primary.main
+                }}
+              >
+                Additional Enterprise Features
+              </Typography>
+              <Typography
+                variant="h6"
+                color="text.secondary"
+                sx={{ maxWidth: 700, mx: 'auto' }}
+              >
+                Advanced capabilities that set FormFlow apart from traditional loan management systems
+              </Typography>
+            </Box>
+
+            <Grid container spacing={4}>
+              <Grid size={{ xs: 12, md: 6, lg: 4 }}>
+                <Card
+                  elevation={2}
+                  sx={{
+                    height: '100%',
+                    borderRadius: 4,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-8px)',
+                      boxShadow: '0 16px 32px rgba(0, 0, 0, 0.1)',
+                    }
+                  }}
+                >
+                  <CardContent sx={{ p: 4, textAlign: 'center' }}>
+                    <BusinessIcon sx={{ fontSize: 48, color: theme.palette.primary.main, mb: 2 }} />
+                    <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
+                      Multi-Company Support
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.6 }}>
+                      Manage multiple company entities with separate workflows, approval hierarchies,
+                      and reporting structures all within a single platform.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid size={{ xs: 12, md: 6, lg: 4 }}>
+                <Card
+                  elevation={2}
+                  sx={{
+                    height: '100%',
+                    borderRadius: 4,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-8px)',
+                      boxShadow: '0 16px 32px rgba(0, 0, 0, 0.1)',
+                    }
+                  }}
+                >
+                  <CardContent sx={{ p: 4, textAlign: 'center' }}>
+                    <PeopleIcon sx={{ fontSize: 48, color: theme.palette.secondary.main, mb: 2 }} />
+                    <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
+                      Team Collaboration
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.6 }}>
+                      Enhanced collaboration features with team comments, file sharing,
+                      and real-time collaboration on loan requests and approvals.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid size={{ xs: 12, md: 6, lg: 4 }}>
+                <Card
+                  elevation={2}
+                  sx={{
+                    height: '100%',
+                    borderRadius: 4,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-8px)',
+                      boxShadow: '0 16px 32px rgba(0, 0, 0, 0.1)',
+                    }
+                  }}
+                >
+                  <CardContent sx={{ p: 4, textAlign: 'center' }}>
+                    <WarehouseIcon sx={{ fontSize: 48, color: '#10b981', mb: 2 }} />
+                    <Typography variant="h5" sx={{ mb: 2, fontWeight: 600 }}>
+                      Automated Workflows
+                    </Typography>
+                    <Typography variant="body1" color="text.secondary" sx={{ lineHeight: 1.6 }}>
+                      Configure custom approval workflows with conditional routing,
+                      automatic escalations, and intelligent decision-making rules.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+
+        {/* CTA Section */}
+        <Box
+          sx={{
+            py: { xs: 8, md: 12 },
+            background: `linear-gradient(135deg, ${theme.palette.primary.dark} 0%, ${theme.palette.primary.main} 50%, ${theme.palette.secondary.main} 100%)`,
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          <Container maxWidth="md">
+            <Box sx={{ textAlign: 'center', color: 'white' }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  mb: 3,
+                  fontWeight: 700,
+                  fontSize: { xs: '2rem', md: '3rem' },
+                  color: 'white'
+                }}
+              >
+                Ready to Experience These Features?
+              </Typography>
+              <Typography
+                variant="h6"
+                sx={{
+                  mb: 6,
+                  opacity: 0.9,
+                  lineHeight: 1.6,
+                  fontSize: { xs: '1.1rem', md: '1.25rem' }
+                }}
+              >
+                Start your free trial today and discover how FormFlow's powerful features
+                can transform your corporate loan management processes.
+              </Typography>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={3} justifyContent="center">
+                <Link href="/login" passHref>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    sx={{
+                      backgroundColor: 'white',
+                      color: theme.palette.primary.main,
+                      fontSize: '1.2rem',
+                      px: 6,
+                      py: 2,
+                      borderRadius: 4,
+                      boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)',
+                      '&:hover': {
+                        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 12px 35px rgba(0, 0, 0, 0.2)',
+                      },
+                      transition: 'all 0.3s ease',
+                    }}
+                  >
+                    Start Free Trial
+                  </Button>
+                </Link>
+                <Button
+                  variant="outlined"
+                  size="large"
+                  sx={{
+                    borderColor: 'rgba(255, 255, 255, 0.3)',
+                    color: 'white',
+                    fontSize: '1.2rem',
+                    px: 6,
+                    py: 2,
+                    borderRadius: 4,
+                    '&:hover': {
+                      borderColor: 'white',
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      transform: 'translateY(-2px)',
+                    },
+                    transition: 'all 0.3s ease',
+                  }}
+                >
+                  Schedule Demo
+                </Button>
+              </Stack>
+            </Box>
+          </Container>
+        </Box>
+      </div>
+    </ThemeProvider>
+  )
+}

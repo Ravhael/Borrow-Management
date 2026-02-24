@@ -1,0 +1,462 @@
+[
+  {
+    "id": "1764125862262",
+    "submittedAt": "2025-11-26T02:57:42.262Z",
+    "isDraft": false,
+    "entitasId": "DGM",
+    "borrowerPhone": "+62 811 1234 5678",
+    "borrowerEmail": "superadmin@company.com",
+    "borrowerName": "System Administrator",
+    "needType": "DEMO_PRODUCT",
+    "demo": {
+      "namaCustomer": "Roy",
+      "namaPerusahaan": "PT ABC",
+      "alamat": "Jl Jayanegara 12",
+      "telepon": "01314566100"
+    },
+    "company": [
+      "IVP Richard"
+    ],
+    "outDate": "2025-11-26",
+    "useDate": "2025-11-27",
+    "returnDate": "2025-12-02",
+    "productDetailsText": "bdfbdfbdfb",
+    "pickupMethod": "SELF_PICKUP",
+    "note": "grergerger",
+    "approvalAgreementFlag": true,
+    "submitNotifications": {
+      "companies": {
+        "IVP Richard": {
+          "Marketing": {
+            "sent": true,
+            "email": "marketing.ivprichard@gmail.com",
+            "sentAt": "2025-11-26T02:57:42.374Z"
+          },
+          "Admin": {
+            "sent": true,
+            "email": "admin.ivprichard@gmail.com",
+            "sentAt": "2025-11-26T02:57:42.374Z"
+          }
+        }
+      }
+    },
+    "approvalNotifications": {
+      "entitas": {
+        "DGM": {
+          "Head": {
+            "sent": true,
+            "email": "dgm-head@example.com",
+            "sentAt": "2025-11-26T03:06:04.998Z"
+          },
+          "Admin": {
+            "sent": true,
+            "email": "dgm-admin@example.com",
+            "sentAt": "2025-11-26T03:06:04.998Z"
+          },
+          "Others": {
+            "sent": true,
+            "email": "dgm-others@example.com",
+            "sentAt": "2025-11-26T03:06:04.998Z"
+          },
+          "Finance": {
+            "sent": true,
+            "email": "dgm-finance@example.com",
+            "sentAt": "2025-11-26T03:06:04.998Z"
+          }
+        }
+      },
+      "companies": {
+        "IVP Richard": {
+          "Head": {
+            "sent": true,
+            "email": "indovisualdigital@gmail.com",
+            "sentAt": "2025-11-26T03:06:04.998Z"
+          },
+          "Admin": {
+            "sent": true,
+            "email": "admin.ivprichard@gmail.com",
+            "sentAt": "2025-11-26T03:06:04.998Z"
+          },
+          "Others": {
+            "sent": true,
+            "email": "others.ivprichard@gmail.com",
+            "sentAt": "2025-11-26T03:06:04.998Z"
+          },
+          "Finance": {
+            "sent": true,
+            "email": "finance.ivprichard@gmail.com",
+            "sentAt": "2025-11-26T03:06:04.998Z"
+          },
+          "Marketing": {
+            "sent": true,
+            "email": "marketing.ivprichard@gmail.com",
+            "sentAt": "2025-11-26T03:06:04.998Z"
+          },
+          "Warehouse": {
+            "sent": true,
+            "email": "warehouse.ivprichard@gmail.com",
+            "sentAt": "2025-11-26T03:06:04.998Z"
+          }
+        }
+      }
+    },
+    "approvals": {
+      "companies": {
+        "IVP Richard": {
+          "approved": true,
+          "approvedBy": "Marketing User",
+          "approvedAt": "2025-11-26T03:06:04.885Z"
+        }
+      }
+    },
+    "reminderStatus": {
+      "1764125862262_reminder_7_days": {
+        "sent": true,
+        "sentAt": "2025-11-26T03:07:39.255Z",
+        "type": "reminder_7_days",
+        "notifications": {
+          "borrower": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:07:39.255Z",
+            "email": "superadmin@company.com"
+          },
+          "entitas": {
+            "DGM": {
+              "Head": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:07:39.255Z",
+                "email": "dgm-head@example.com"
+              },
+              "Admin": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:07:39.255Z",
+                "email": "dgm-admin@example.com"
+              },
+              "Others": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:07:39.255Z",
+                "email": "dgm-others@example.com"
+              },
+              "Finance": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:07:39.255Z",
+                "email": "dgm-finance@example.com"
+              }
+            }
+          },
+          "companies": {
+            "IVP Richard": {
+              "Head": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:07:39.255Z",
+                "email": "indovisualdigital@gmail.com"
+              },
+              "Admin": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:07:39.255Z",
+                "email": "admin.ivprichard@gmail.com"
+              },
+              "Others": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:07:39.255Z",
+                "email": "others.ivprichard@gmail.com"
+              },
+              "Finance": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:07:39.255Z",
+                "email": "finance.ivprichard@gmail.com"
+              },
+              "Marketing": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:07:39.255Z",
+                "email": "marketing.ivprichard@gmail.com"
+              },
+              "Warehouse": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:07:39.255Z",
+                "email": "warehouse.ivprichard@gmail.com"
+              }
+            }
+          }
+        }
+      },
+      "1764125862262_reminder_3_days": {
+        "sent": true,
+        "sentAt": "2025-11-26T03:08:01.843Z",
+        "type": "reminder_3_days",
+        "notifications": {
+          "borrower": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:01.843Z",
+            "email": "superadmin@company.com"
+          },
+          "entitas": {
+            "DGM": {
+              "Head": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:01.843Z",
+                "email": "dgm-head@example.com"
+              },
+              "Admin": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:01.843Z",
+                "email": "dgm-admin@example.com"
+              },
+              "Others": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:01.843Z",
+                "email": "dgm-others@example.com"
+              },
+              "Finance": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:01.843Z",
+                "email": "dgm-finance@example.com"
+              }
+            }
+          },
+          "companies": {
+            "IVP Richard": {
+              "Head": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:01.843Z",
+                "email": "indovisualdigital@gmail.com"
+              },
+              "Admin": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:01.843Z",
+                "email": "admin.ivprichard@gmail.com"
+              },
+              "Others": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:01.843Z",
+                "email": "others.ivprichard@gmail.com"
+              },
+              "Finance": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:01.843Z",
+                "email": "finance.ivprichard@gmail.com"
+              },
+              "Marketing": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:01.843Z",
+                "email": "marketing.ivprichard@gmail.com"
+              },
+              "Warehouse": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:01.843Z",
+                "email": "warehouse.ivprichard@gmail.com"
+              }
+            }
+          }
+        }
+      },
+      "1764125862262_reminder_1_days": {
+        "sent": true,
+        "sentAt": "2025-11-26T03:08:14.791Z",
+        "type": "reminder_1_days",
+        "notifications": {
+          "borrower": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:14.791Z",
+            "email": "superadmin@company.com"
+          },
+          "entitas": {
+            "DGM": {
+              "Head": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:14.791Z",
+                "email": "dgm-head@example.com"
+              },
+              "Admin": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:14.791Z",
+                "email": "dgm-admin@example.com"
+              },
+              "Others": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:14.791Z",
+                "email": "dgm-others@example.com"
+              },
+              "Finance": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:14.791Z",
+                "email": "dgm-finance@example.com"
+              }
+            }
+          },
+          "companies": {
+            "IVP Richard": {
+              "Head": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:14.791Z",
+                "email": "indovisualdigital@gmail.com"
+              },
+              "Admin": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:14.791Z",
+                "email": "admin.ivprichard@gmail.com"
+              },
+              "Others": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:14.791Z",
+                "email": "others.ivprichard@gmail.com"
+              },
+              "Finance": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:14.791Z",
+                "email": "finance.ivprichard@gmail.com"
+              },
+              "Marketing": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:14.791Z",
+                "email": "marketing.ivprichard@gmail.com"
+              },
+              "Warehouse": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:14.791Z",
+                "email": "warehouse.ivprichard@gmail.com"
+              }
+            }
+          }
+        }
+      },
+      "1764125862262_reminder_0_days": {
+        "sent": true,
+        "sentAt": "2025-11-26T03:08:25.081Z",
+        "type": "reminder_0_days",
+        "notifications": {
+          "borrower": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:25.081Z",
+            "email": "superadmin@company.com"
+          },
+          "entitas": {
+            "DGM": {
+              "Head": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:25.081Z",
+                "email": "dgm-head@example.com"
+              },
+              "Admin": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:25.081Z",
+                "email": "dgm-admin@example.com"
+              },
+              "Others": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:25.081Z",
+                "email": "dgm-others@example.com"
+              },
+              "Finance": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:25.081Z",
+                "email": "dgm-finance@example.com"
+              }
+            }
+          },
+          "companies": {
+            "IVP Richard": {
+              "Head": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:25.081Z",
+                "email": "indovisualdigital@gmail.com"
+              },
+              "Admin": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:25.081Z",
+                "email": "admin.ivprichard@gmail.com"
+              },
+              "Others": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:25.081Z",
+                "email": "others.ivprichard@gmail.com"
+              },
+              "Finance": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:25.081Z",
+                "email": "finance.ivprichard@gmail.com"
+              },
+              "Marketing": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:25.081Z",
+                "email": "marketing.ivprichard@gmail.com"
+              },
+              "Warehouse": {
+                "sent": true,
+                "sentAt": "2025-11-26T03:08:25.081Z",
+                "email": "warehouse.ivprichard@gmail.com"
+              }
+            }
+          }
+        }
+      }
+    },
+    "warehouseStatus": {
+      "status": "Dikembalikan",
+      "processedAt": "2025-11-26T03:07:02.607Z",
+      "processedBy": "Warehouse Staff",
+      "returnedAt": "2025-11-26T03:08:53.333Z",
+      "returnedBy": "Warehouse Staff"
+    },
+    "returnNotifications": {
+      "entitas": {
+        "DGM": {
+          "Head": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:53.333Z",
+            "email": "dgm-head@example.com"
+          },
+          "Admin": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:53.333Z",
+            "email": "dgm-admin@example.com"
+          },
+          "Others": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:53.333Z",
+            "email": "dgm-others@example.com"
+          },
+          "Finance": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:53.333Z",
+            "email": "dgm-finance@example.com"
+          }
+        }
+      },
+      "companies": {
+        "IVP Richard": {
+          "Head": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:53.333Z",
+            "email": "indovisualdigital@gmail.com"
+          },
+          "Admin": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:53.333Z",
+            "email": "admin.ivprichard@gmail.com"
+          },
+          "Others": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:53.333Z",
+            "email": "others.ivprichard@gmail.com"
+          },
+          "Finance": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:53.333Z",
+            "email": "finance.ivprichard@gmail.com"
+          },
+          "Marketing": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:53.333Z",
+            "email": "marketing.ivprichard@gmail.com"
+          },
+          "Warehouse": {
+            "sent": true,
+            "sentAt": "2025-11-26T03:08:53.333Z",
+            "email": "warehouse.ivprichard@gmail.com"
+          }
+        }
+      }
+    }
+  }
+]

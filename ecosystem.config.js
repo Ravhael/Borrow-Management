@@ -1,0 +1,71 @@
+// ecosystem.config.js
+// PM2 configuration for FormFlow
+// Loads .env.production so PM2 runs with the same environment you use in production
+
+require('dotenv').config({ path: './.env.production' })
+
+module.exports = {
+  apps: [
+    {
+      name: 'formflow',
+      script: 'node_modules/next/dist/bin/next',
+      args: 'start -p 3002 -H 127.0.0.1',
+      cwd: process.cwd(),
+      env_production: {
+        NODE_ENV: 'production',
+        PORT: process.env.PORT || '3002',
+        NEXT_PUBLIC_BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH || '/formflow',
+        NEXTAUTH_URL: process.env.NEXTAUTH_URL || 'http://127.0.0.1:3002/formflow',
+        NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://127.0.0.1:3002/formflow',
+        INTERNAL_BASE_URL: process.env.INTERNAL_BASE_URL || `http://127.0.0.1:${process.env.PORT || 3002}${process.env.NEXT_PUBLIC_BASE_PATH || '/formflow'}`,
+        DATABASE_URL: process.env.DATABASE_URL,
+        SMTP_HOST: process.env.SMTP_HOST,
+        SMTP_PORT: process.env.SMTP_PORT,
+        SMTP_USER: process.env.SMTP_USER,
+        SMTP_PASS: process.env.SMTP_PASS,
+        FROM_EMAIL: process.env.FROM_EMAIL,
+        FROM_NAME: process.env.FROM_NAME,
+        REMINDER_AUTH_TOKEN: process.env.REMINDER_AUTH_TOKEN,
+      },
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_restarts: 5,
+      out_file: './logs/formflow-out.log',
+      error_file: './logs/formflow-err.log',
+      merge_logs: true,
+      time: true,
+    },
+    {
+      name: 'formflow-reminder',
+      script: 'node',
+      args: 'scripts/reminder-daemon.js',
+      cwd: process.cwd(),
+      env_production: {
+        NODE_ENV: 'production',
+        PORT: process.env.PORT || '3002',
+        REMINDER_API_URL: process.env.REMINDER_API_URL || (process.env.INTERNAL_BASE_URL ? `${process.env.INTERNAL_BASE_URL.replace(/\/$/, '')}/api/reminders` : (process.env.NEXT_PUBLIC_APP_URL ? `${process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, '')}/api/reminders` : 'http://127.0.0.1:3002/api/reminders')),
+        NEXT_PUBLIC_BASE_PATH: process.env.NEXT_PUBLIC_BASE_PATH || '/formflow',
+        NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://127.0.0.1:3002/formflow',
+        INTERNAL_BASE_URL: process.env.INTERNAL_BASE_URL || `http://127.0.0.1:${process.env.PORT || 3002}${process.env.NEXT_PUBLIC_BASE_PATH || '/formflow'}`,
+        DATABASE_URL: process.env.DATABASE_URL,
+        SMTP_HOST: process.env.SMTP_HOST,
+        SMTP_PORT: process.env.SMTP_PORT,
+        SMTP_USER: process.env.SMTP_USER,
+        SMTP_PASS: process.env.SMTP_PASS,
+        FROM_EMAIL: process.env.FROM_EMAIL,
+        FROM_NAME: process.env.FROM_NAME,
+        REMINDER_AUTH_TOKEN: process.env.REMINDER_AUTH_TOKEN,
+        REMINDER_RUN_HOUR: process.env.REMINDER_RUN_HOUR || '9',
+      },
+      instances: 1,
+      autorestart: true,
+      watch: false,
+      max_restarts: 5,
+      out_file: './logs/reminder-out.log',
+      error_file: './logs/reminder-err.log',
+      merge_logs: true,
+      time: true,
+    },
+  ],
+}

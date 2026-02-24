@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Permintaan Peminjaman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        @media (min-width: 640px) {
+            .grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px 20px;
+            align-items: start;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 6px 4px;
+            font-weight: normal;
+        }
+        .checkbox-item input[type="checkbox"] {
+            margin-top: 3px;
+            width: 16px;
+            height: 16px;
+        }
+        .hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        .actions {
+            text-align: right;
+            padding: 20px 0;
+            border-top: 1px solid #ddd;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        .approval-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .approval-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .approval-row input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+        }
+        .approval-row label {
+            margin: 0;
+            font-weight: normal;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Buat Permintaan Peminjaman</h1>
+        <p>Lengkapi data di bawah dengan jelas agar proses persetujuan lebih cepat.</p>
+    </div>
+
+    <form action="#" method="post">
+        <!-- Entitas Peminjam -->
+        <div class="card section">
+            <h2>Entitas Peminjam</h2>
+            <p>Informasi peminjam untuk keperluan verifikasi dan notifikasi.</p>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="borrowerName">Nama Peminjam *</label>
+                    <input type="text" id="borrowerName" name="borrowerName" required readonly>
+                </div>
+                <div class="form-group">
+                    <label for="entitasId">Entitas Peminjam *</label>
+                    <select id="entitasId" name="entitasId" required>
+                        <option value="">Pilih Entitas</option>
+                        <option value="SGM">SGM</option>
+                        <option value="PKU">PKU</option>
+                        <option value="SGP">SGP</option>
+                        <option value="IDC">IDC</option>
+                        <option value="BDG">BDG</option>
+                        <option value="SMG">SMG</option>
+                        <option value="SGJ">SGJ</option>
+                        <option value="SBY">SBY</option>
+                        <option value="BALI">BALI</option>
+                        <option value="ENT">ENT</option>
+                        <option value="DEC">DEC</option>
+                        <option value="HAVS">HAVS</option>
+                        <option value="SKP">SKP</option>
+                        <option value="VIS">VIS</option>
+                        <option value="OSS">OSS</option>
+                        <option value="ISS">ISS</option>
+                        <option value="HRD">HRD</option>
+                        <option value="IVP">IVP</option>
+                        <option value="MLDS">MLDS</option>
+                        <option value="UMP">UMP</option>
+                        <option value="Marcomm">Marcomm</option>
+                        <option value="Micro PDN">Micro PDN</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="borrowerPhone">No Telepon Peminjam *</label>
+                    <input type="tel" id="borrowerPhone" name="borrowerPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="needType">Jenis Kebutuhan *</label>
+                    <select id="needType" name="needType" required>
+                        <option value="">Pilih Jenis Kebutuhan</option>
+                        <option value="DEMO_PRODUCT">Demo Product</option>
+                        <option value="BARANG_BACKUP">Barang Backup</option>
+                        <option value="LAINNYA">Kebutuhan Lainnya</option>
+                        <!-- Add other options as needed -->
+                    </select>
+                    <div class="hint">Untuk kebutuhan di luar list pilih opsi "Kebutuhan Lainnya" dan jelaskan.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Demo Product (shown when needType is DEMO_PRODUCT) -->
+        <div class="card section" id="demoSection" style="display: none;">
+            <h2>Section Demo Product</h2>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="demoNamaCustomer">Nama Customer</label>
+                    <input type="text" id="needDetailsNamaCustomer" name="needDetails.namaCustomer">
+                </div>
+                <div class="form-group">
+                    <label for="demoNamaPerusahaan">Nama Perusahaan / Institusi</label>
+                    <input type="text" id="needDetailsNamaPerusahaan" name="needDetails.namaPerusahaan">
+                </div>
+                <div class="form-group">
+                    <label for="demoAlamat">Alamat Demo</label>
+                    <input type="text" id="needDetailsAlamat" name="needDetails.alamat">
+                </div>
+                <div class="form-group">
+                    <label for="demoTelepon">No Telepon Customer</label>
+                    <input type="tel" id="needDetailsTelepon" name="needDetails.telepon">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Barang Backup (shown when needType is BARANG_BACKUP) -->
+        <div class="card section" id="backupSection" style="display: none;">
+            <h2>Section Barang Backup</h2>
+            <div class="grid">
+                <div class="form-group">
+                    <label for="backupNamaCustomer">Nama Customer (Backup)</label>
+                    <input type="text" id="needDetailsNamaCustomer_backup" name="needDetails.namaCustomer">
+                </div>
+                <div class="form-group">
+                    <label for="backupNamaPerusahaan">Nama Perusahaan / Institusi (Backup)</label>
+                    <input type="text" id="needDetailsNamaPerusahaan_backup" name="needDetails.namaPerusahaan">
+                </div>
+                <div class="form-group">
+                    <label for="backupAlamat">Alamat (Backup)</label>
+                    <input type="text" id="needDetailsAlamat_backup" name="needDetails.alamat">
+                </div>
+                <div class="form-group">
+                    <label for="backupTelepon">No Telepon Customer (Backup)</label>
+                    <input type="tel" id="needDetailsTelepon_backup" name="needDetails.telepon">
+                </div>
+                <div class="form-group col-span-2">
+                    <label for="backupAlasan">Alasan Kebutuhan Barang Backup?</label>
+                    <textarea id="needDetailsAlasan_backup" name="needDetails.alasan"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Kebutuhan Lainnya (shown when needType is LAINNYA) -->
+        <div class="card section" id="lainnyaSection" style="display: none;">
+            <h2>Section Kebutuhan Lainnya</h2>
+            <div class="form-group">
+                <label for="lainnya">Tuliskan Kebutuhan Peminjaman</label>
+                <textarea id="lainnya" name="lainnya"></textarea>
+            </div>
+        </div>
+
+        <!-- Detail Product -->
+        <div class="card section">
+            <h2>Detail Product</h2>
+            <p>Pilih Company dan tentukan tanggal serta rincian kebutuhan.</p>
+            <div class="grid">
+                <div class="form-group col-span-2">
+                    <label>Company *</label>
+                    <div class="checkbox-grid" role="group" aria-label="Company options">
+                        <label class="checkbox-item"><input type="radio" name="company" value="IVP Richard"> IVP Richard</label>
+                        <label class="checkbox-item"><input type="radio" name="company" value="IVP Gilang"> IVP Gilang</label>
+                        <label class="checkbox-item"><input type="radio" name="company" value="IVP Hosi"> IVP Hosi</label>
+                        <label class="checkbox-item"><input type="radio" name="company" value="IVP Adela"> IVP Adela</label>
+                        <label class="checkbox-item"><input type="radio" name="company" value="MLDS Rafi"> MLDS Rafi</label>
+                        <label class="checkbox-item"><input type="radio" name="company" value="UMP Calvin"> UMP Calvin</label>
+                    </div>
+                    <div class="hint">
+                        1. IVP Richard - Panasonic Projector, Panasonic Professional Display, PTZ Camera Panasonic<br>
+                        2. IVP Gilang - Microvision Digital Signage, KIOSK, Videowall, & IFP<br>
+                        3. IVP Hosi - IFP Newline, Solstice, Cue, Tricolor, Wyrestorm, Extron, Avcit<br>
+                        4. IVP Adela - Philips Professional Display, Brightsign, & IFP Promethean<br>
+                        5. MLDS Rafi - LED Display<br>
+                        6. UMP Calvin - Audio & Conference System
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="outDate">Tanggal barang keluar dari gudang *</label>
+                    <input type="date" id="outDate" name="outDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="useDate">Tanggal barang dipakai *</label>
+                    <input type="date" id="useDate" name="useDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="returnDate">Tanggal barang dikembalikan *</label>
+                    <input type="date" id="returnDate" name="returnDate" required>
+                </div>
+                <div class="form-group col-span-2">
+                    <label for="productDetailsText">Rincian Product *</label>
+                    <textarea id="productDetailsText" name="productDetailsText" placeholder="Tuliskan rincian produk yang dibutuhkan" required></textarea>
+                    <div class="hint">Brand / Tipe / Jumlah Unit</div>
+                </div>
+                <div class="form-group">
+                    <label for="pickupMethod">Metode Pengambilan Barang *</label>
+                    <select id="pickupMethod" name="pickupMethod" required>
+                        <option value="">Pilih Metode</option>
+                        <option value="SELF_PICKUP">Self Pickup / Ambil sendiri</option>
+                        <option value="WAREHOUSE_DELIVERY">Dikirim oleh pihak gudang</option>
+                        <option value="THIRD_PARTY">Menggunakan pihak ke tiga</option>
+                    </select>
+                </div>
+                <div class="form-group col-span-2">
+                    <label for="note">Catatan</label>
+                    <textarea id="note" name="note"></textarea>
+                    <div class="hint">(diisi jika terdapat catatan khusus, seperti : urgency dan detail peminjaman barang )</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Approval -->
+        <div class="card section">
+            <h2>Approval</h2>
+            <div class="approval-box">
+                Dengan mengirimkan Form Request ini, saya sudah membaca, mengerti dan menyetujui persyaratan serta prosedur tentang Peminjaman Barang nomor MKT-001 tanggal 01 Jan 2025 yg ada di link berikut:
+                <a href="https://bit.ly/sop_peminjaman_barang" target="_blank" rel="noopener noreferrer">bit.ly/sop_peminjaman_barang</a>
+            </div>
+            <div class="form-group">
+                <div class="approval-row">
+                    <input type="checkbox" id="approvalAgreementFlag" name="approvalAgreementFlag" required>
+                    <label for="approvalAgreementFlag">Ya, saya setuju</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button type="submit" class="btn-primary">Ajukan Peminjaman</button>
+            <button type="button" class="btn-secondary">Simpan Draft</button>
+        </div>
+    </form>
+
+    <script>
+        // Simple JavaScript to show/hide sections based on needType
+        document.getElementById('needType').addEventListener('change', function() {
+            const value = this.value;
+            document.getElementById('demoSection').style.display = value === 'DEMO_PRODUCT' ? 'block' : 'none';
+            document.getElementById('backupSection').style.display = value === 'BARANG_BACKUP' ? 'block' : 'none';
+            document.getElementById('lainnyaSection').style.display = value === 'LAINNYA' ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html></content>

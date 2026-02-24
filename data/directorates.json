@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "JD (Joko Budianto)",
+    "code": "JD",
+    "description": "Operations Directorate",
+    "email": "",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "IA (Indah)",
+    "code": "IA",
+    "description": "Finance Directorate",
+    "email": "",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "IS (Iwan Setiawan)",
+    "code": "IS",
+    "description": "Human Resources Directorate",
+    "email": "",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "JY (Jonny)",
+    "code": "JY",
+    "description": "Information Technology Directorate",
+    "email": "",
+    "active": true
+  },
+  {
+    "id": 5,
+    "name": "FF (Fuad Firdaus)",
+    "code": "FF",
+    "description": "Marketing Directorate",
+    "email": "",
+    "active": true
+  },
+  {
+    "id": 6,
+    "name": "KB (Kodrat Budiadji)",
+    "code": "KB",
+    "description": "Logistics Directorate",
+    "email": "",
+    "active": true
+  }
+]

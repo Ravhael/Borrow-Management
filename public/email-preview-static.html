@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Email Preview (static)</title>
+    <style>
+      body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;color:#222;background:#f6f8fb;margin:0;padding:24px}
+      .container{max-width:1100px;margin:0 auto;background:#fff;padding:20px;border-radius:8px;box-shadow:0 4px 18px rgba(16,24,40,0.08)}
+      h1{margin:0 0 12px;font-size:22px}
+      .row{display:flex;gap:16px;flex-wrap:wrap}
+      .card{flex:1 1 48%;background:#fff;border:1px solid #e6eef6;border-radius:8px;padding:16px;margin-bottom:12px}
+      .preview{border:1px solid #ddd;padding:12px;border-radius:6px;background:#fff;min-height:120px}
+      pre{white-space:pre-wrap;background:#f3f6f8;padding:8px;border-radius:6px;border:1px solid #e8eef2;max-height:160px;overflow:auto}
+      .send-ctrl{display:flex;gap:8px;align-items:center;margin-top:12px}
+      input[type=text]{padding:8px;border-radius:6px;border:1px solid #ccc}
+      button{background:#0069ff;color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+      .meta{color:#5a6b80;font-size:13px;margin-bottom:8px}
+      label{font-weight:600;font-size:13px;color:#1f2937}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Email Preview — Static Snapshot</h1>
+      <p class="meta">This static file shows a simplified layout of the Email Preview page so you can inspect the HTML without running the dev server.</p>
+
+      <div class="row">
+        <div class="card">
+          <h3>User Email</h3>
+          <div class="preview">
+            <h3>Request by Budi Santoso</h3>
+            <p>Items: Laptop, Mouse</p>
+            <p>Use date: 2025-11-02 — Return: 2025-11-05</p>
+          </div>
+          <details style="margin-top:8px"><summary style="cursor:pointer">Raw HTML</summary>
+            <pre>&lt;div style="font-family: Arial, sans-serif; padding: 16px;"&gt;
+  &lt;h3&gt;Request by Budi Santoso&lt;/h3&gt;
+  &lt;p&gt;Items: Laptop, Mouse&lt;/p&gt;
+  &lt;p&gt;Use date: 2025-11-02 — Return: 2025-11-05&lt;/p&gt;
+&lt;/div&gt;
+            </pre>
+          </details>
+          <div class="send-ctrl">
+            <input type="text" placeholder="to@domain.example" style="width:320px" />
+            <input type="text" placeholder="Override subject (optional)" style="width:360px" />
+            <button>Send test</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Approver Email</h3>
+          <div class="preview">
+            <h3>Approver notification for Budi Santoso</h3>
+            <p>Please approve request 1</p>
+          </div>
+          <details style="margin-top:8px"><summary style="cursor:pointer">Raw HTML</summary>
+            <pre>&lt;div style="font-family: Arial, sans-serif; padding: 16px;"&gt;
+  &lt;h3&gt;Approver notification for Budi Santoso&lt;/h3&gt;
+  &lt;p&gt;Please approve request 1&lt;/p&gt;
+&lt;/div&gt;
+            </pre>
+          </details>
+          <div class="send-ctrl">
+            <input type="text" placeholder="atasan@example.com" style="width:320px" />
+            <input type="text" placeholder="Override subject (optional)" style="width:360px" />
+            <button>Send test</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="card" style="flex-basis:100%">
+          <h3>Account emails (examples)</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <div style="flex:1;min-width:260px;border:1px solid #eef6ff;padding:12px;border-radius:6px">
+              <strong>Password reset (preview)</strong>
+              <div class="preview" style="margin-top:8px">Reset link — Reset your password now</div>
+            </div>
+            <div style="flex:1;min-width:260px;border:1px solid #fff3cd;padding:12px;border-radius:6px">
+              <strong>Account creation (preview)</strong>
+              <div class="preview" style="margin-top:8px">Account created — waiting approval</div>
+            </div>
+            <div style="flex:1;min-width:260px;border:1px solid #d4edda;padding:12px;border-radius:6px">
+              <strong>Account approved (preview)</strong>
+              <div class="preview" style="margin-top:8px">Welcome — your account is active</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p style="color:#555;margin-top:18px">To view the live, interactive page use the dev server: <code>npm run dev</code> and open <strong>http://localhost:3000/email-preview</strong></p>
+    </div>
+  </body>
+</html>

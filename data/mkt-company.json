@@ -1,0 +1,98 @@
+[
+  {
+    "value": "IVP Richard",
+    "label": "IVP Richard",
+    "description": "Panasonic Projector, Panasonic Professional Display, PTZ Camera Panasonic",
+    "userId": "mkt001",
+    "whId": null,
+    "isActive": true,
+    "emails": {
+      "Head": "head@company.com",
+      "Admin": "indovisualdigital@gmail.com",
+      "Others": "others@company.com",
+      "Finance": "finance@company.com",
+      "Marketing": "bill.decindo@gmail.com",
+      "Warehouse": "piondigitalindonesia@gmail.com"
+    }
+  },
+  {
+    "value": "IVP Gilang",
+    "label": "IVP Gilang",
+    "description": "Microvision Digital Signage, KIOSK, Videowall, & IFP",
+    "userId": "mkt002",
+    "whId": null,
+    "isActive": false,
+    "emails": {
+      "Head": "head.ivpgilang@gmail.com",
+      "Admin": "admin.ivpgilang@gmail.com",
+      "Others": "others.ivpgilang@gmail.com",
+      "Finance": "finance.ivpgilang@gmail.com",
+      "Marketing": "marketing.ivpgilang@gmail.com",
+      "Warehouse": "warehouse.ivpgilang@gmail.com"
+    }
+  },
+  {
+    "value": "IVP Hosi",
+    "label": "IVP Hosi",
+    "description": "IFP Newline, Solstice, Cue, Tricolor, Wyrestorm, Extron, Avcit",
+    "userId": "mkt003",
+    "whId": null,
+    "isActive": true,
+    "emails": {
+      "Head": "head.ivphosi@gmail.com",
+      "Admin": "admin.ivphosi@gmail.com",
+      "Others": "others.ivphosi@gmail.com",
+      "Finance": "finance.ivphosi@gmail.com",
+      "Marketing": "marketing.ivphosi@gmail.com",
+      "Warehouse": "warehouse.ivphosi@gmail.com"
+    }
+  },
+  {
+    "value": "IVP Adela",
+    "label": "IVP Adela",
+    "description": "Philips Professional Display, Brightsign, & IFP Promethean",
+    "userId": null,
+    "whId": null,
+    "isActive": true,
+    "emails": {
+      "Head": "head.ivpadela@gmail.com",
+      "Admin": "admin.ivpadela@gmail.com",
+      "Others": "others.ivpadela@gmail.com",
+      "Finance": "finance.ivpadela@gmail.com",
+      "Marketing": "marketing.ivpadela@gmail.com",
+      "Warehouse": "warehouse.ivpadela@gmail.com"
+    }
+  },
+  {
+    "value": "MLDS Rafi",
+    "label": "MLDS Rafi",
+    "description": "LED Display",
+    "userId": null,
+    "whId": null,
+    "isActive": true,
+    "emails": {
+      "Head": "head.mldsrafi@gmail.com",
+      "Admin": "admin.mldsrafi@gmail.com",
+      "Others": "others.mldsrafi@gmail.com",
+      "Finance": "finance.mldsrafi@gmail.com",
+      "Marketing": "marketing.mldsrafi@gmail.com",
+      "Warehouse": "warehouse.mldsrafi@gmail.com"
+    }
+  },
+  {
+    "value": "UMP Calvin",
+    "label": "UMP Calvin",
+    "description": "Audio & Conference System",
+    "userId": null,
+    "whId": null,
+    "isActive": true,
+    "emails": {
+      "Head": "head.umpcalvin@gmail.com",
+      "Admin": "admin.umpcalvin@gmail.com",
+      "Others": "others.umpcalvin@gmail.com",
+      "Finance": "finance.umpcalvin@gmail.com",
+      "Marketing": "marketing.umpcalvin@gmail.com",
+      "Warehouse": "warehouse.umpcalvin@gmail.com"
+    }
+  }
+]

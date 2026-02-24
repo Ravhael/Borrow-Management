@@ -1,0 +1,833 @@
+import React, { useState } from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import {
+  Container,
+  Typography,
+  Card,
+  CardContent,
+  Button,
+  Box,
+  Grid,
+  Paper,
+  Stepper,
+  Step,
+  StepLabel,
+  Alert,
+  CircularProgress,
+  Avatar,
+  Chip,
+  Divider,
+  Stack,
+  Fade,
+  Zoom,
+  CssBaseline
+} from '@mui/material'
+import {
+  Assignment as AssignmentIcon,
+  Person as PersonIcon,
+  Inventory as InventoryIcon,
+  CheckCircle as CheckCircleIcon,
+  Save as SaveIcon,
+  Send as SendIcon,
+  Business as BusinessIcon,
+  Schedule as ScheduleIcon,
+  Description as DescriptionIcon,
+  Gavel as GavelIcon,
+  Pending as PendingIcon,
+  Cancel as CancelIcon
+} from '@mui/icons-material'
+import { ThemeProvider } from '@mui/material/styles'
+import HeaderForm from '../components/HeaderForm'
+import EntitasForm from '../components/EntitasForm'
+import DetailProduct from '../components/DetailProduct'
+import Approval from '../components/Approval'
+import DemoSection from '../components/DemoSection'
+import BackupSection from '../components/BackupSection'
+import FooterForm from '../components/FooterForm'
+import { BorrowerInfoSection, LoanDetailsSection, ProductDetailsSection, ApprovalSection } from '../components/sections'
+import { FormDataShape } from '../types/form'
+import { formTheme } from '../themes/formTheme'
+import toast from 'react-hot-toast'
+
+const steps = [
+  {
+    label: 'Informasi Peminjam',
+    icon: <PersonIcon />,
+    description: 'Data pribadi & kontak'
+  },
+  {
+    label: 'Detail Kebutuhan',
+    icon: <InventoryIcon />,
+    description: 'Jenis & spesifikasi kebutuhan'
+  },
+  {
+    label: 'Detail Produk',
+    icon: <DescriptionIcon />,
+    description: 'Informasi produk & jadwal'
+  },
+  {
+    label: 'Persetujuan',
+    icon: <GavelIcon />,
+    primary: {
+      main: '#1a365d', // Professional dark blue
+      light: '#2d3748',
+      dark: '#0f1419',
+    },
+    secondary: {
+      main: '#00d4aa', // Corporate teal
+      light: '#38e4c8',
+      dark: '#00b894',
+    },
+    success: {
+      main: '#2e7d32',
+      light: '#4caf50',
+      dark: '#1b5e20',
+      contrastText: '#ffffff',
+    },
+    error: {
+      main: '#d32f2f',
+      light: '#ef5350',
+      dark: '#c62828',
+      contrastText: '#ffffff',
+    },
+    warning: {
+      main: '#ed6c02',
+      light: '#ff9800',
+      dark: '#e65100',
+      contrastText: '#ffffff',
+    },
+    info: {
+      main: '#0288d1',
+      light: '#03a9f4',
+      dark: '#01579b',
+      contrastText: '#ffffff',
+    },
+    background: {
+      default: '#f8fafc',
+      paper: '#ffffff',
+    },
+  },
+  typography: {
+    fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+    h2: {
+      fontWeight: 800,
+      fontSize: '3.5rem',
+    },
+    h4: {
+      fontWeight: 700,
+      fontSize: '2.125rem',
+    },
+    h5: {
+      fontWeight: 600,
+      fontSize: '1.5rem',
+    },
+    h6: {
+      fontWeight: 600,
+      fontSize: '1.25rem',
+    },
+    body1: {
+      fontWeight: 400,
+      fontSize: '1rem',
+    },
+    body2: {
+      fontWeight: 400,
+      fontSize: '0.875rem',
+    },
+  },
+  shape: {
+    borderRadius: 12,
+  },
+  shadows: [
+    'none',
+    '0px 2px 4px rgba(0,0,0,0.05)',
+    '0px 4px 8px rgba(0,0,0,0.1)',
+    '0px 8px 16px rgba(0,0,0,0.12)',
+    '0px 12px 24px rgba(0,0,0,0.15)',
+    '0px 16px 32px rgba(0,0,0,0.18)',
+    '0px 20px 40px rgba(0,0,0,0.2)',
+    '0px 24px 48px rgba(0,0,0,0.22)',
+    '0px 28px 56px rgba(0,0,0,0.24)',
+    '0px 32px 64px rgba(0,0,0,0.26)',
+    '0px 36px 72px rgba(0,0,0,0.28)',
+    '0px 40px 80px rgba(0,0,0,0.3)',
+    '0px 44px 88px rgba(0,0,0,0.32)',
+    '0px 48px 96px rgba(0,0,0,0.34)',
+    '0px 52px 104px rgba(0,0,0,0.36)',
+    '0px 56px 112px rgba(0,0,0,0.38)',
+    '0px 60px 120px rgba(0,0,0,0.4)',
+    '0px 64px 128px rgba(0,0,0,0.42)',
+    '0px 68px 136px rgba(0,0,0,0.44)',
+    '0px 72px 144px rgba(0,0,0,0.46)',
+    '0px 76px 152px rgba(0,0,0,0.48)',
+    '0px 80px 160px rgba(0,0,0,0.5)',
+    '0px 84px 168px rgba(0,0,0,0.52)',
+    '0px 88px 176px rgba(0,0,0,0.54)',
+    '0px 92px 184px rgba(0,0,0,0.56)',
+  ],
+  components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16,
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          border: '1px solid rgba(255, 255, 255, 0.8)',
+          '&:hover': {
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+            transform: 'translateY(-2px)',
+          },
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 12,
+          textTransform: 'none',
+          fontWeight: 600,
+          padding: '12px 24px',
+          fontSize: '0.875rem',
+          boxShadow: 'none',
+          transition: 'all 0.2s ease',
+        },
+        contained: {
+          boxShadow: '0 4px 14px rgba(26, 54, 93, 0.25)',
+          '&:hover': {
+            boxShadow: '0 6px 20px rgba(26, 54, 93, 0.3)',
+            transform: 'translateY(-1px)',
+          },
+          '&:active': {
+            transform: 'translateY(0)',
+          },
+        },
+        outlined: {
+          borderWidth: 2,
+          '&:hover': {
+            borderWidth: 2,
+            boxShadow: '0 4px 14px rgba(26, 54, 93, 0.15)',
+          },
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+          fontWeight: 500,
+          height: 28,
+        },
+        colorPrimary: {
+          background: 'linear-gradient(135deg, #1a365d 0%, #0f1419 100%)',
+          color: 'white',
+        },
+        colorSuccess: {
+          background: 'linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%)',
+          color: 'white',
+        },
+        colorError: {
+          background: 'linear-gradient(135deg, #d32f2f 0%, #c62828 100%)',
+          color: 'white',
+        },
+        colorWarning: {
+          background: 'linear-gradient(135deg, #ed6c02 0%, #e65100 100%)',
+          color: 'white',
+        },
+        colorInfo: {
+          background: 'linear-gradient(135deg, #0288d1 0%, #01579b 100%)',
+          color: 'white',
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            borderRadius: 12,
+            backgroundColor: 'rgba(255, 255, 255, 0.8)',
+            backdropFilter: 'blur(10px)',
+            transition: 'all 0.2s ease',
+            '&:hover': {
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
+            },
+            '&.Mui-focused': {
+              backgroundColor: 'white',
+              boxShadow: '0 0 0 3px rgba(26, 54, 93, 0.1)',
+            },
+          },
+        },
+      },
+    },
+    MuiTableContainer: {
+      styleOverrides: {
+        root: {
+          borderRadius: 16,
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+          border: '1px solid rgba(255, 255, 255, 0.8)',
+          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          backdropFilter: 'blur(20px)',
+        },
+      },
+    },
+    MuiTableHead: {
+      styleOverrides: {
+        root: {
+          '& .MuiTableCell-head': {
+            background: 'white',
+            color: '#374151',
+            fontWeight: 600,
+            fontSize: '0.875rem',
+            borderBottom: '2px solid #e5e7eb',
+            py: 2,
+          },
+        },
+      },
+    },
+    MuiTableRow: {
+      styleOverrides: {
+        root: {
+          '&:hover': {
+            backgroundColor: 'rgba(26, 54, 93, 0.04)',
+            transform: 'translateY(-1px)',
+            boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+          },
+          transition: 'all 0.2s ease',
+          borderBottom: '1px solid rgba(0, 0, 0, 0.06)',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundImage: 'none',
+        },
+        elevation1: {
+          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
+        },
+        elevation2: {
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
+        },
+        elevation3: {
+          boxShadow: '0 6px 24px rgba(0, 0, 0, 0.12)',
+        },
+      },
+    },
+  },
+})
+
+const steps = [
+  {
+    label: 'Informasi Peminjam',
+    icon: <PersonIcon />,
+    description: 'Data pribadi & kontak'
+  },
+  {
+    label: 'Detail Kebutuhan',
+    icon: <InventoryIcon />,
+    description: 'Jenis & spesifikasi kebutuhan'
+  },
+  {
+    label: 'Detail Produk',
+    icon: <DescriptionIcon />,
+    description: 'Informasi produk & jadwal'
+  },
+  {
+    label: 'Persetujuan',
+    icon: <GavelIcon />,
+    description: 'Konfirmasi & submit'
+  }
+]
+
+export default function FormPage(){
+  const router = useRouter()
+  const [formData, setFormData] = useState<FormDataShape>({})
+  const [errors, setErrors] = useState<Record<string,string>>({})
+  const [loading, setLoading] = useState(false)
+  const [activeStep, setActiveStep] = useState(0)
+
+  const validate = () => {
+    const e: Record<string,string> = {}
+    if(!formData.borrowerName) e.borrowerName = 'Nama peminjam wajib diisi'
+    if(!formData.entitasId) e.entitasId = 'Pilih entitas peminjam'
+    if(!formData.borrowerPhone) e.borrowerPhone = 'No telepon wajib diisi'
+    if(!formData.borrowerEmail) e.borrowerEmail = 'Email peminjam wajib diisi'
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.borrowerEmail)) e.borrowerEmail = 'Format email tidak valid'
+    if(!formData.needType) e.needType = 'Pilih jenis kebutuhan'
+    if(!formData.company || (formData.company && formData.company.length===0)) e.company = 'Pilih company'
+    if(!formData.outDate) e.outDate = 'Pilih tanggal keluar'
+    if(!formData.useDate) e.useDate = 'Pilih tanggal pakai'
+    if(!formData.returnDate) e.returnDate = 'Pilih tanggal kembali'
+    if(!formData.productDetailsText) e.productDetailsText = 'Isi rincian product'
+    if(!formData.approvalAgreementFlag) e.approvalAgreementFlag = 'Anda harus menyetujui persyaratan'
+
+    // Date validations
+    const today = new Date()
+    today.setHours(0, 0, 0, 0) // Set to start of day for comparison
+
+    // Tanggal barang keluar tidak boleh sebelum hari pengajuan
+    if(formData.outDate){
+      const outDate = new Date(formData.outDate)
+      if(outDate < today) e.outDate = 'Tanggal keluar tidak boleh sebelum hari ini'
+    }
+
+    // Tanggal barang dipakai tidak boleh sebelum tanggal keluar
+    if(formData.outDate && formData.useDate){
+      const out = new Date(formData.outDate)
+      const use = new Date(formData.useDate)
+      if(use < out) e.useDate = 'Tanggal pakai tidak boleh sebelum tanggal keluar'
+    }
+
+    // Tanggal barang dikembalikan tidak boleh sebelum tanggal dipakai
+    if(formData.useDate && formData.returnDate){
+      const use = new Date(formData.useDate)
+      const ret = new Date(formData.returnDate)
+      if(ret < use) e.returnDate = 'Tanggal kembali tidak boleh sebelum tanggal pakai'
+    }
+
+    setErrors(e)
+    return Object.keys(e).length===0
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if(!validate()){
+      toast.error('Periksa kembali form yang bertanda merah')
+      return
+    }
+    setLoading(true)
+    try{
+      const res = await fetch('/api/submit', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ ...formData, isDraft: false })
+      })
+      const json = await res.json()
+      toast.success(json.message || 'Permintaan peminjaman berhasil diajukan', {
+        duration: 4000
+      })
+
+      // Redirect to detail page
+      if (json.id) {
+        router.push(`/peminjaman/${json.id}`)
+      } else {
+        // Reset form if no ID returned (fallback)
+        setFormData({
+          borrowerName: '',
+          entitasId: '',
+          borrowerPhone: '',
+          needType: '',
+          company: [],
+          outDate: '',
+          useDate: '',
+          returnDate: '',
+          productDetailsText: '',
+          pickupMethod: '',
+          note: '',
+          approvalAgreementFlag: false,
+          lainnya: ''
+        })
+      }
+    }catch(err){
+      console.error(err)
+      toast.error('Terjadi kesalahan saat mengajukan peminjaman')
+    }finally{
+      setLoading(false)
+    }
+  }
+
+  const handleSaveDraft = async () => {
+    setLoading(true)
+    try{
+      const res = await fetch('/api/submit', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ ...formData, isDraft: true })
+      })
+      const json = await res.json()
+      toast.success(json.message || 'Draft berhasil disimpan', {
+        duration: 3000
+      })
+
+      // Redirect to detail page
+      if (json.id) {
+        router.push(`/peminjaman/${json.id}`)
+      }
+    }catch(err){
+      console.error(err)
+      toast.error('Terjadi kesalahan saat menyimpan draft')
+    }finally{
+      setLoading(false)
+    }
+  }
+
+  return (
+    <ThemeProvider theme={corporateTheme}>
+      <CssBaseline />
+
+      {/* Hero Header Section - Full Width */}
+      <Fade in={true} timeout={800}>
+        <Box
+          sx={{
+            background: 'linear-gradient(135deg, #1a365d 0%, #2d3748 50%, #00d4aa 100%)',
+            color: 'white',
+            py: { xs: 6, md: 8 },
+            position: 'relative',
+            overflow: 'hidden',
+            '&::before': {
+              content: '""',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+              opacity: 0.1,
+            }
+          }}
+        >
+          <Box sx={{ position: 'relative', zIndex: 1, maxWidth: '1200px', mx: 'auto', px: { xs: 2, md: 4 } }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 4 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <AssignmentIcon sx={{ fontSize: { xs: 40, md: 48 }, mr: 3, opacity: 0.9 }} />
+                <Box>
+                  <Typography
+                    variant="h2"
+                    component="h1"
+                    sx={{
+                      fontWeight: 800,
+                      fontSize: { xs: '2rem', md: '2.5rem' },
+                      mb: 2,
+                      background: 'linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%)',
+                      backgroundClip: 'text',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                    }}
+                  >
+                    Loan Request Form
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    sx={{
+                      fontWeight: 400,
+                      fontSize: { xs: '1rem', md: '1.25rem' },
+                      opacity: 0.9,
+                      maxWidth: '600px',
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    Submit your loan request with our streamlined form process. Get approval faster with our digital workflow.
+                  </Typography>
+                </Box>
+              </Box>
+              <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                <Button
+                  component={Link}
+                  href="/peminjaman"
+                  variant="outlined"
+                  startIcon={<AssignmentIcon />}
+                  sx={{
+                    borderColor: 'rgba(255, 255, 255, 0.3)',
+                    color: 'white',
+                    '&:hover': {
+                      borderColor: 'white',
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    }
+                  }}
+                >
+                  View All Requests
+                </Button>
+              </Box>
+            </Box>
+
+            {/* Key Stats Row */}
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: {
+                  xs: 'repeat(2, 1fr)',
+                  sm: 'repeat(4, 1fr)'
+                },
+                gap: 3,
+                mt: 4
+              }}
+            >
+              {steps.map((step, index) => (
+                <Zoom key={step.label} in={true} style={{ transitionDelay: `${(index + 1) * 100}ms` }}>
+                  <Paper
+                    sx={{
+                      p: 2,
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      backdropFilter: 'blur(10px)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
+                      borderRadius: 3,
+                      textAlign: 'center',
+                    }}
+                  >
+                    <Box sx={{ color: 'primary.light', mb: 1, fontSize: 24 }}>
+                      {step.icon}
+                    </Box>
+                    <Typography variant="h6" sx={{ fontWeight: 600, color: 'white', mb: 0.5, fontSize: '0.9rem' }}>
+                      {step.label.split(' ')[0]}
+                    </Typography>
+                    <Typography variant="caption" sx={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.7rem' }}>
+                      {step.description}
+                    </Typography>
+                  </Paper>
+                </Zoom>
+              ))}
+            </Box>
+          </Box>
+        </Box>
+      </Fade>
+
+      <div>
+        <Head>
+          <title>Buat Permintaan Peminjaman</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+        </Head>
+
+        <Container maxWidth={false} sx={{ maxWidth: 1350, py: 6, px: { xs: 2, md: 4 } }}>
+          <HeaderForm />
+
+          {/* Enhanced Progress Indicator */}
+          <Paper
+            elevation={4}
+            sx={{
+              p: 3,
+              mb: 4,
+              borderRadius: 3,
+              background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+              border: '1px solid rgba(21, 101, 192, 0.1)',
+              position: 'relative',
+              overflow: 'hidden',
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '4px',
+                background: 'linear-gradient(90deg, #1565c0 0%, #42a5f5 50%, #1565c0 100%)',
+              }
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
+              <Avatar sx={{ bgcolor: '#1565c0', mr: 2 }}>
+                <AssignmentIcon />
+              </Avatar>
+              <Box>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#1a1a1a', mb: 0.5, fontSize: '1.1rem' }}>
+                  Formulir Permintaan Peminjaman
+                </Typography>
+                <Typography variant="body2" sx={{ color: '#666', fontSize: '0.8rem' }}>
+                  Lengkapi semua informasi dengan benar untuk memproses permintaan Anda
+                </Typography>
+              </Box>
+            </Box>
+
+            <Stepper activeStep={activeStep} alternativeLabel sx={{
+              '& .MuiStepIcon-root': {
+                width: 48,
+                height: 48,
+                fontSize: '1.5rem',
+                '&.Mui-active': {
+                  boxShadow: '0px 4px 12px rgba(21, 101, 192, 0.3)',
+                },
+              },
+              '& .MuiStepConnector-line': {
+                borderColor: '#e0e0e0',
+                borderWidth: 2,
+              },
+              '& .MuiStepConnector-active .MuiStepConnector-line': {
+                borderColor: '#1565c0',
+                borderWidth: 3,
+              },
+              '& .MuiStepConnector-completed .MuiStepConnector-line': {
+                borderColor: '#2e7d32',
+                borderWidth: 3,
+              },
+            }}>
+              {steps.map((step, index) => (
+                <Step key={step.label}>
+                  <StepLabel
+                    icon={step.icon}
+                    sx={{
+                      '& .MuiStepLabel-label': {
+                        fontWeight: 600,
+                        fontSize: '0.8rem',
+                        mt: 1,
+                        color: index === activeStep ? '#1565c0' : index < activeStep ? '#2e7d32' : '#666',
+                      },
+                      '& .MuiStepLabel-description': {
+                        fontSize: '0.65rem',
+                        color: '#888',
+                        mt: 0.5,
+                      },
+                    }}
+                  >
+                    {step.label}
+                    <Typography variant="caption" sx={{ display: 'block', color: '#888', mt: 0.5 }}>
+                      {step.description}
+                    </Typography>
+                  </StepLabel>
+                </Step>
+              ))}
+            </Stepper>
+
+            {/* Progress Indicator */}
+            <Box sx={{ mt: 3, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Chip
+                label={`${activeStep + 1} dari ${steps.length}`}
+                color="primary"
+                variant="outlined"
+                sx={{ fontWeight: 600 }}
+              />
+            </Box>
+          </Paper>
+
+          <form onSubmit={handleSubmit}>
+            <Stack spacing={4}>
+              {/* Borrower Info Section */}
+              <BorrowerInfoSection
+                formData={formData}
+                setFormData={setFormData}
+                errors={errors}
+              />
+
+              {/* Loan Details Section */}
+              <LoanDetailsSection
+                formData={formData}
+                setFormData={setFormData}
+              />
+
+              {/* Product Details Section */}
+              <ProductDetailsSection
+                formData={formData}
+                setFormData={setFormData}
+                errors={errors}
+              />
+
+              {/* Approval Section */}
+              <ApprovalSection
+                formData={formData}
+                setFormData={setFormData}
+                errors={errors}
+              />
+            </Stack>
+
+            {/* Enhanced Action Buttons */}
+            <Fade in={true} style={{ transitionDelay: '500ms' }}>
+              <Paper
+                elevation={4}
+                sx={{
+                  p: 3,
+                  mt: 4,
+                  borderRadius: 3,
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+                  border: '1px solid rgba(21, 101, 192, 0.1)',
+                  bottom: 24,
+                  zIndex: 1000,
+                  boxShadow: '0px 8px 32px rgba(0,0,0,0.12)',
+                }}
+              >
+                <Box sx={{ textAlign: 'center', mb: 3 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 700, color: '#1a1a1a', mb: 1, fontSize: '1.1rem' }}>
+                    Siap Mengajukan Permintaan?
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#666', fontSize: '0.8rem' }}>
+                    Pastikan semua informasi telah diisi dengan benar sebelum mengajukan
+                  </Typography>
+                </Box>
+
+                <Box sx={{
+                  display: 'flex',
+                  gap: 3,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  flexWrap: 'wrap'
+                }}>
+                  <Button
+                    type="button"
+                    variant="outlined"
+                    onClick={handleSaveDraft}
+                    disabled={loading}
+                    startIcon={loading ? <CircularProgress size={20} /> : <SaveIcon />}
+                    sx={{
+                      minWidth: 200,
+                      py: 1.5,
+                      borderColor: '#424242',
+                      color: '#424242',
+                      '&:hover': {
+                        borderColor: '#424242',
+                        bgcolor: 'rgba(66, 66, 66, 0.04)',
+                        transform: 'translateY(-2px)',
+                      }
+                    }}
+                  >
+                    {loading ? 'Menyimpan...' : 'Simpan Draft'}
+                  </Button>
+
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    disabled={loading}
+                    startIcon={loading ? <CircularProgress size={20} /> : <SendIcon />}
+                    sx={{
+                      minWidth: 220,
+                      py: 1.5,
+                      fontSize: '1rem',
+                      fontWeight: 700,
+                      background: 'linear-gradient(135deg, #1565c0 0%, #0d47a1 100%)',
+                      boxShadow: '0px 4px 16px rgba(21, 101, 192, 0.3)',
+                      '&:hover': {
+                        background: 'linear-gradient(135deg, #0d47a1 0%, #1565c0 100%)',
+                        boxShadow: '0px 6px 24px rgba(21, 101, 192, 0.4)',
+                        transform: 'translateY(-2px)',
+                      }
+                    }}
+                  >
+                    {loading ? 'Mengajukan...' : 'Ajukan Peminjaman'}
+                  </Button>
+                </Box>
+
+                <Box sx={{ mt: 3, textAlign: 'center' }}>
+                  <Typography variant="caption" sx={{ color: '#888', fontStyle: 'italic' }}>
+                    Dengan mengajukan permintaan, Anda menyetujui syarat dan ketentuan yang berlaku
+                  </Typography>
+                </Box>
+              </Paper>
+            </Fade>
+
+            {/* Enhanced Error Summary */}
+            {Object.keys(errors).length > 0 && (
+              <Fade in={true}>
+                <Alert
+                  severity="error"
+                  sx={{
+                    mt: 4,
+                    borderRadius: 3,
+                    p: 3,
+                    fontSize: '1rem',
+                    boxShadow: '0px 4px 16px rgba(211, 47, 47, 0.2)',
+                    border: '1px solid rgba(211, 47, 47, 0.2)'
+                  }}
+                  icon={<Typography variant="h6" sx={{ color: '#d32f2f', mr: 1 }}>⚠️</Typography>}
+                >
+                  <Typography variant="body1" sx={{ fontWeight: 600, mb: 1 }}>
+                    Periksa kembali form yang bertanda merah
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: '#666' }}>
+                    Beberapa field wajib belum diisi atau formatnya tidak valid
+                  </Typography>
+                </Alert>
+              </Fade>
+            )}
+          </form>
+        </Container>
+
+        <FooterForm />
+      </div>
+    </ThemeProvider>
+  )
+}

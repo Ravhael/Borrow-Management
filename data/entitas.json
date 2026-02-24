@@ -1,0 +1,506 @@
+[
+  {
+    "id": 1,
+    "name": "DEC",
+    "code": "DEC",
+    "description": "PT Digitalindo Eka Citra",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 1
+  },
+  {
+    "id": 2,
+    "name": "ENT",
+    "code": "ENT",
+    "description": "PT Indovisual Sistem Integrasi",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 1
+  },
+  {
+    "id": 3,
+    "name": "HAVS",
+    "code": "HAVS",
+    "description": "PT Digitalindo Eka Citra",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 1
+  },
+  {
+    "id": 4,
+    "name": "IIV/HRD",
+    "code": "IIVHRD",
+    "description": "PT Indovisual Investama",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 1
+  },
+  {
+    "id": 5,
+    "name": "ISS JKT",
+    "code": "ISSJKT",
+    "description": "PT Servisindo Kualita Prima",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 1
+  },
+  {
+    "id": 6,
+    "name": "KIM JKT",
+    "code": "KIMJKT",
+    "description": "PT Kreasi Internusa Mandiri",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 1
+  },
+  {
+    "id": 7,
+    "name": "KSI",
+    "code": "KSI",
+    "description": "Kualitas Sistem Integrasi",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 1
+  },
+  {
+    "id": 8,
+    "name": "MLDS",
+    "code": "MLDS",
+    "description": "PT Invia Solusindo Pratama",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 1
+  },
+  {
+    "id": 9,
+    "name": "UMP",
+    "code": "UMP",
+    "description": "PT Unipro Multi Perdana",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 2
+  },
+  {
+    "id": 13,
+    "name": "IIV/AM GA",
+    "code": "IIVAMGA",
+    "description": "CV Aman Sentosa",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 2
+  },
+  {
+    "id": 16,
+    "name": "IIV/CORP",
+    "code": "IIVCORP",
+    "description": "PT Indovisual Investama",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 2
+  },
+  {
+    "id": 17,
+    "name": "IIV/TAX",
+    "code": "IIVTAX",
+    "description": "PT Invia Solusindo Pratama",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 2
+  },
+  {
+    "id": 18,
+    "name": "IIV/LOG",
+    "code": "IIVLOG",
+    "description": "PT Invia Solusindo Pratama",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 2
+  },
+  {
+    "id": 19,
+    "name": "MVI-PDN",
+    "code": "MVIPDN",
+    "description": "PT Microvision Indonesia",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 3
+  },
+  {
+    "id": 20,
+    "name": "IOC HLD",
+    "code": "IOCHLD",
+    "description": "PT Indovisual Presentatama",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 21,
+    "name": "WH JKT",
+    "code": "WHJKT",
+    "description": "CV Aman Sentosa",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 22,
+    "name": "IDC",
+    "code": "IDC",
+    "description": "PT Indovisual Presentatama",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 23,
+    "name": "SGP",
+    "code": "SGP",
+    "description": "PT Sarana Global Prima",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 24,
+    "name": "DGM",
+    "code": "DGM",
+    "description": "Digital Marketing",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 25,
+    "name": "IVP",
+    "code": "IVP",
+    "description": "PT Microvision Indonesia",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 26,
+    "name": "PTS",
+    "code": "PTS",
+    "description": "PT Indovisual Presentatama",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 27,
+    "name": "LCI",
+    "code": "LCI",
+    "description": "PT Limacanka Indonesia",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 5
+  },
+  {
+    "id": 28,
+    "name": "VIP",
+    "code": "VIP",
+    "description": "PT Visualindo Presentaprima",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 5
+  },
+  {
+    "id": 29,
+    "name": "PAS",
+    "code": "PAS",
+    "description": "PT Office and Security Solution",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 5
+  },
+  {
+    "id": 30,
+    "name": "SVD",
+    "code": "SVD",
+    "description": "PT Servisindo Kualita Prima",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 5
+  },
+  {
+    "id": 31,
+    "name": "OSS",
+    "code": "OSS",
+    "description": "PT Office and Security Solution",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 5
+  },
+  {
+    "id": 32,
+    "name": "SSS",
+    "code": "SSS",
+    "description": "PT Office and Security Solution",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 6
+  },
+  {
+    "id": 33,
+    "name": "SGM",
+    "code": "SGM",
+    "description": "Surabaya / SGM",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 34,
+    "name": "PKU",
+    "code": "PKU",
+    "description": "Pekanbaru / PKU",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 35,
+    "name": "BDG",
+    "code": "BDG",
+    "description": "Bandung / BDG",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 36,
+    "name": "SMG",
+    "code": "SMG",
+    "description": "Semarang / SMG",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 37,
+    "name": "SGJ",
+    "code": "SGJ",
+    "description": "Yogyakarta / SGJ",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 38,
+    "name": "SBY",
+    "code": "SBY",
+    "description": "Surabaya / SBY",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 39,
+    "name": "BALI",
+    "code": "BALI",
+    "description": "Bali / BALI",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 40,
+    "name": "Marcomm",
+    "code": "Marcomm",
+    "description": "Marcomm",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 4
+  },
+  {
+    "id": 41,
+    "name": "SKP",
+    "code": "SKP",
+    "description": "SKP",
+    "emails": {
+      "Head": "",
+      "Finance": "",
+      "Admin": "",
+      "Others": ""
+    },
+    "isActive": true,
+    "directorateId": 1
+  }
+]

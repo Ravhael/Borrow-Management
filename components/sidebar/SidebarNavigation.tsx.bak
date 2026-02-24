@@ -1,0 +1,138 @@
+import React from 'react'
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import {
+  Box,
+  Typography,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  useTheme,
+  useMediaQuery,
+} from '@mui/material'
+import { MenuGroup, UserRole } from '../../types/sidebar'
+
+const ROLE_TITLE_MAP: Record<UserRole, string> = {
+  superadmin: 'Superadmin',
+  admin: 'Admin',
+  regular: 'Regular User',
+  marketing: 'Marketing',
+  gudang: 'Warehouse'
+}
+
+interface SidebarNavigationProps {
+  menuGroups: MenuGroup[]
+  currentRole: UserRole
+  onToggle: () => void
+  collapsed: boolean
+}
+
+export default function SidebarNavigation({
+  menuGroups,
+  currentRole,
+  onToggle,
+  collapsed
+}: SidebarNavigationProps) {
+  const router = useRouter()
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+
+  return (
+    <Box sx={{
+      flex: 1,
+      overflow: 'auto',
+      px: isMobile ? 2 : collapsed ? 0.5 : 1,
+      '&::-webkit-scrollbar': {
+        width: '4px',
+      },
+      '&::-webkit-scrollbar-track': {
+        backgroundColor: 'transparent',
+      },
+      '&::-webkit-scrollbar-thumb': {
+        backgroundColor: theme.palette.action.disabled,
+        borderRadius: '2px',
+      },
+    }}>
+      {menuGroups
+        .filter((group) => group.title === ROLE_TITLE_MAP[currentRole])
+        .map((group) => (
+          <Box key={group.title} sx={{ mb: isMobile ? 3 : collapsed ? 1 : 2 }}>
+            {!collapsed && (
+              <Typography
+                variant="overline"
+                sx={{
+                  px: isMobile ? 2 : 2,
+                  py: isMobile ? 1.5 : 1,
+                  color: 'text.secondary',
+                  fontWeight: 600,
+                  letterSpacing: '0.08em',
+                  display: 'block',
+                  fontSize: isMobile ? '0.75rem' : '0.6875rem',
+                }}
+              >
+                {group.title}
+              </Typography>
+            )}
+
+            <List dense={!isMobile} sx={{ py: 0 }}>
+              {group.items.map((item) => {
+                const isActive = router.pathname === item.href
+                return (
+                  <ListItem key={item.href} disablePadding sx={{ mb: isMobile ? 1 : collapsed ? 0.25 : 0.5 }}>
+                    <ListItemButton
+                      component={Link}
+                      href={item.href}
+                      onClick={() => {
+                        if (isMobile) onToggle()
+                      }}
+                      sx={{
+                        borderRadius: 2,
+                        mx: isMobile ? 1 : collapsed ? 0.5 : 1,
+                        minHeight: isMobile ? 56 : collapsed ? 48 : 48,
+                        px: isMobile ? 2.5 : collapsed ? 1.5 : 2,
+                        justifyContent: collapsed ? 'center' : 'flex-start',
+                        bgcolor: isActive ? theme.palette.primary.main + '10' : 'transparent',
+                        border: isActive ? `1px solid ${theme.palette.primary.main}30` : 'none',
+                        '&:hover': {
+                          bgcolor: isActive
+                            ? theme.palette.primary.main + '15'
+                            : theme.palette.action.hover,
+                        },
+                        transition: theme.transitions.create(['background-color', 'border-color'], {
+                          duration: theme.transitions.duration.shortest,
+                        }),
+                      }}
+                    >
+                      <ListItemIcon
+                        sx={{
+                          minWidth: isMobile ? 48 : collapsed ? 'auto' : 48,
+                          color: isActive ? theme.palette.primary.main : item.color,
+                          transition: theme.transitions.create('color', {
+                            duration: theme.transitions.duration.shortest,
+                          }),
+                        }}
+                      >
+                        {item.icon}
+                      </ListItemIcon>
+                      {!collapsed && (
+                        <ListItemText
+                          primary={item.label}
+                          primaryTypographyProps={{
+                            variant: isMobile ? 'body1' : 'body2',
+                            fontWeight: isActive ? 600 : 400,
+                            color: isActive ? 'primary.main' : 'text.primary',
+                          }}
+                        />
+                      )}
+                    </ListItemButton>
+                  </ListItem>
+                )
+              })}
+            </List>
+          </Box>
+        ))}
+    </Box>
+  )
+}
